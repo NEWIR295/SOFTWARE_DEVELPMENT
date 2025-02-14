@@ -16,7 +16,26 @@ int main(int argc, char **argv){
     int n;
     std::cout << "enter 2D array size: " ;
     std::cin >> n;
-    int *array = new int[n];
+    int **dynamicArray = new int *[2];
+    for(int i = 0; i<2; i++){
+        dynamicArray[i] = new int[n];
+    }
+
+    std::cout << "enter 2D array values:"<<std::endl;
+    for(int i = 0 ; i < 2 ; i++){
+        for(int j = 0; j < 2 ; j++){
+            std::cout << "array " << i+1 << " " << j+1 << " = ";
+            std::cin >> dynamicArray[i][j];
+        }
+    }
+
+    std::cout << "2D array values:"<<std::endl;
+
+    for(int i = 0 ; i < 2 ; i++){
+        for(int j = 0; j < 2 ; j++){
+            std::cout << "array " << i+1 << " " << j+1 << " = " << dynamicArray[i][j] << std::endl;
+        }
+    }
 
     return 0;
 }
