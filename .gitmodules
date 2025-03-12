@@ -1,3 +1,6 @@
 [submodule "CPP/Projects/Snake-And-Ladder-Game"]
 	path = CPP/Projects/Snake-And-Ladder-Game
 	url = https://github.com/NEWIR295/Snake-And-Ladder-Game.git
+[submodule "C-Programming"]
+	path = C-Programming
+	url = https://github.com/NEWIR295/C-Programming.git
