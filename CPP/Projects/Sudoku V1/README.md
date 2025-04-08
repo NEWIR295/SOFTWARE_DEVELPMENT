@@ -15,10 +15,11 @@ This is a console-based implementation of the popular **Sudoku puzzle**, built i
 - **Puzzle Generation**: Generates with different difficulty levels (Easy, Medium, Hard).
 
 ## Features
-- Load puzzle from a file.
 - Enter and validate player moves.
-- Solve puzzles automatically using a backtracking algorithm.
+- Solve puzzles automatically using backtracking algorithm.
+- Generates new puzzles using backtracking algorithm.
 - Save the current puzzle state to a file.
+- Load puzzle from a file.
 - Modular class structure to support scalability.
 
 ## Default Puzzle
