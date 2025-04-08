@@ -12,8 +12,7 @@ This is a console-based implementation of the popular **Sudoku puzzle**, built i
 - **Interactive Console Interface**: Play, solve, load, and save puzzles.
 - **Backtracking Solver**: Solve any valid Sudoku puzzle.
 - **Input Validation**: Ensures all moves and file inputs are correct.
-- **Optional Features**:
-  - Puzzle Generation with different difficulty levels (Easy, Medium, Hard).
+- **Puzzle Generation**: Generates with different difficulty levels (Easy, Medium, Hard).
 
 ## Features
 - Load puzzle from a file.
@@ -75,7 +74,7 @@ This is a console-based implementation of the popular **Sudoku puzzle**, built i
 - **SudokuBoard**: Manages the 9x9 grid, validation, and board display.
 - **SudokuSolver**: Implements the recursive backtracking solver.
 - **SudokuGame**: Manages the game loop and user interaction.
-- **SudokuGenerator**: Generates valid Sudoku puzzles.
+- **SudokuGenerator**: Generates valid Sudoku puzzles using recursive backtracking Algorithm.
 
 ## File Management Architecture
 
@@ -119,4 +118,4 @@ make
 
 ---
 
-### Stay tuned for [Sudoku Game V2](Project Link) featuring a **Qt++ GUI** interface built with C++!
+### Stay tuned for [Sudoku Game V2](https://github.com/NEWIR295/SOFTWARE_DEVELPMENT/tree/main/CPP/Projects/Sudoku%20V2) featuring a **Qt++ GUI** interface built with C++!
