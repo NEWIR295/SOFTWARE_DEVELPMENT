@@ -84,20 +84,25 @@ int main(void){
     );
     std::cout << "High Priority Tasks Counts: " << filter_tasks << std::endl;
     std::cout << "Filtered Tasks by Priority (" << filter_priority << "):" << std::endl;
-    display_tasks(tasks);
+    for (const auto& task : tasks) {
+        if (task.priority == filter_priority) {
+            task.display();
+        }
+    }
+    std::cout << std::endl;
 
     // 3. Sort tasks by priority and completion status
     std::sort(tasks.begin(), tasks.end(),
         [](const Task& t1, const Task& t2){
-            if(t1.priority == t2.priority){
-                return t1.status < t2.status;
-            }
             const std::map<std::string, int> priority_map = {
                 {"low", LOW},
                 {"medium", MEDIUM},
                 {"high", HIGH}
             };
-            return priority_map.at(t1.priority) < priority_map.at(t2.priority);
+            if(t1.priority != t2.priority){
+                return priority_map.at(t1.priority) < priority_map.at(t2.priority);
+            }
+            return t1.status < t2.status;
         }
     );
 
