@@ -15,7 +15,7 @@ int main(void){
     std::shared_ptr<Book> ptr1 = std::make_shared<Book>(myBook);
     std::cout << "count = " << ptr1.use_count() << std::endl;
 
-    // std::shared_ptr<Book> ptr2 = std::make_shared<Book>(myBook);
+    // std::shared_ptr<Book> ptr2 = std::make_shared<Book>(myBook); //won't invoke shared_ptr constructor
     std::shared_ptr<Book> ptr2 = ptr1;
     std::cout << "count = " << ptr2.use_count() << std::endl;
     ptr1.reset();
