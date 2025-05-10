@@ -28,6 +28,7 @@ private:
 
 public:
     Complex();
+    Complex(double real) : real(real), imag(0){}
     Complex(double real, double imag);
     Complex(const Complex &c);
     Complex& operator=(const Complex &c);
