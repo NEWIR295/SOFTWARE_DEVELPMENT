@@ -3,7 +3,7 @@ Author: Mohamed Newir
 Date: 10/05/2025
 File: airlineSystem.hpp
 Description:
-    o 
+    o
 */
 
 #ifndef AIRLINE_SYSTEM_HPP
@@ -15,8 +15,18 @@ Description:
 #include <algorithm>
 #include <fstream>
 
-class AirlineSystem{
+class AirlineSystem
+{
+private:
+void displayMenu();
+// void handleUserInput();
+// void saveData();
+// void loadData();
 
+public:
+    void run();
+    AirlineSystem();
+    ~AirlineSystem();
 };
 
 #endif

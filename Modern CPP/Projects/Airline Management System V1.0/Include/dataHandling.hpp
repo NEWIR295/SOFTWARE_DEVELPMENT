@@ -10,13 +10,16 @@ Description:
 #define DATA_HANDLING_HPP
 
 #include <iostream>
+#include <fstream>
 #include <string>
+#include <filesystem>
+#include <nlohmann/json.hpp>
+
 #include <vector>
 #include <algorithm>
-#include <fstream>
 
 class DataHandling{
-
+    
 };
 
 #endif

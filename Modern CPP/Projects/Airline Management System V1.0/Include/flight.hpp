@@ -3,7 +3,7 @@ Author: Mohamed Newir
 Date: 10/05/2025
 File: flight.hpp
 Description:
-    o 
+    o
 */
 
 #ifndef FLIGHT_HPP
@@ -14,13 +14,189 @@ Description:
 #include <vector>
 #include <algorithm>
 #include <fstream>
+#include <memory>
+#include <map>
 
-class Flight{
+#include "aircraft.hpp"
+#include "users.hpp"
+
+std::map<std::string, double> crewSalaryPerHourIn$ = {
+    {"Pilot", 96.00},
+    {"Flight Attendant", 28.0}
+};
+
+class Flight
+{
+private:
+    std::string flightID;
+    std::string departure;
+    std::string arrival;
+    std::string date;
+    int duration;
+    int capacity;
+    int availableSeats;
+    double price;
+    std::shared_ptr<Aircraft> aircraft;
+    std::vector<std::shared_ptr<Crew>> crewMembers;
+    std::vector<std::shared_ptr<Passenger>> passengers;
+    std::vector<std::shared_ptr<Crew>> crew;
+    std::shared_ptr<Reservation> reservation;
+
+public:
+    Flight(std::string flightID, std::string departure, std::string arrival, std::string date, int duration, int capacity, double price);
+
+    bool addCrewMember(std::shared_ptr<Crew> crewMember);
+    bool removeCrewMember(std::shared_ptr<Crew> crewMember);
+
+    bool addPassenger(std::shared_ptr<Passenger> passenger);
+    bool removePassenger(std::shared_ptr<Passenger> passenger);
+
+    bool assignAircraft(std::shared_ptr<Aircraft> aircraft);
+
+    double getFlightDuration() const;
+
+    bool editFlightDetails();
+    bool cancelFlight();
+
+    bool viewAvailableSeats();
+    bool viewCrewMembers();
+    bool viewPassengers();
+    bool viewFlightHistory();
+    bool viewFlightDetails();
+
+    bool addReservation(std::shared_ptr<Reservation> reservation);
+    bool removeReservation(std::shared_ptr<Reservation> reservation);
+    bool checkAvailability();
+
+    std::string getFlightID() const;
+};
+
+// المفروض يقري من الفايل الكرو الموجودين
+class Crew
+{
+private:
+    std::string crewID;
+    std::string name;
+    std::string role;
+
+protected:
+    Crew(std::string&, std::string&, std::string&);
+
+public:
+    virtual bool assignSalary(double duration) = 0;
+    virtual bool viewCrewDetails() = 0;
+    virtual bool editCrewDetails() = 0;
+    virtual bool deleteCrew() = 0;
+
+    std::string getCrewID() const;
+    std::string getCrewName() const;
+    std::string getCrewRole() const;
 
 };
 
-class Crew{
+class Pilot : public Crew
+{
+public:
+    Pilot(std::string&, std::string&, std::string&);
+    bool assignSalary(double duration);
+    bool viewCrewDetails();
+    bool editCrewDetails();
+    bool deleteCrew();
+};
 
+class FlightAttendant : public Crew
+{
+    public:
+    FlightAttendant(std::string&, std::string&, std::string&);
+    bool assignSalary(double duration);
+    bool viewCrewDetails();
+    bool editCrewDetails();
+    bool deleteCrew();
+};
+
+class Seat
+{
+private:
+    std::string seatID;
+    std::string seatClass;
+    std::string seatType;
+    bool isAvailable;
+
+public:
+    bool viewAvailableSeats();
+    bool bookSeat();
+    bool cancelSeat();
+    // bool editSeat();
+
+    std::string getSeatID() const;
+};
+
+class PaymentMethod
+{
+
+public:
+    virtual bool processPayment(double amount) = 0;
+    virtual bool refundPayment() = 0;
+};
+
+class PaypalMethod : public PaymentMethod
+{
+public:
+    bool processPayment(double amount) override;
+    bool refundPayment() override;
+};
+
+class CreditCardMethod : public PaymentMethod
+{
+
+public:
+    bool processPayment(double amount) override;
+    bool refundPayment() override;
+};
+
+class CashMethod : public PaymentMethod
+{
+
+public:
+    bool processPayment(double amount) override;
+    bool refundPayment() override;
+};
+
+class Payment
+{
+private:
+    std::shared_ptr<PaymentMethod> paymentMethod;
+    double amount;
+    bool status;
+    std::string transactionID;
+    std::string date;
+
+public:
+    Payment(std::shared_ptr<PaymentMethod> method);
+    bool pay(double amount);
+    bool refund();
+};
+
+class Reservation
+{
+private:
+    std::string reservationID;
+    std::string flightID;
+    std::string passengerID;
+    std::string seatID;
+    std::string date;
+    std::string status;
+    Seat seat;
+    Payment payment;
+    std::shared_ptr<Flight> flight;
+    std::shared_ptr<Passenger> passenger;
+
+public:
+    Reservation(std::shared_ptr<Flight> flight, std::shared_ptr<Passenger> passenger);
+    bool bookFlight();
+    bool deleteReservation();
+    bool editReservation();
+    bool viewReservation();
 };
 
 #endif

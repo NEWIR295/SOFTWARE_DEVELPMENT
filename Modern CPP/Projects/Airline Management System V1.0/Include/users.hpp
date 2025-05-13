@@ -15,26 +15,32 @@ Description:
 #include <algorithm>
 #include <fstream>
 
+enum rank{
+    ADMINISTRATOR,
+    BOOKING_AGENT
+};
+
 class User
 {
-
 private:
     std::string username;
     std::string password;
     std::string email;
     std::string phone;
     std::string name;
-    int userID;
     std::string address;
-    int phone;
+    int userID;
 
 public:
+    User(std::string& , std::string& , std::string& , std::string& , std::string& , std::string&);
     virtual bool login(void) = 0;
     virtual bool logout(void) = 0;
     virtual bool viewProfile(void) = 0;
     virtual bool editProfile(void) = 0;
     virtual bool deleteProfile(void) = 0;
-    virtual bool registerUser(void) = 0;
+    bool registerUser(void);
+
+    virtual bool SearchUser(int) = 0;
 };
 
 class Passenger : public User
@@ -42,21 +48,25 @@ class Passenger : public User
 
 private:
     int loyaltyPoints;
-    int passengerID;
+    std::string passengerID;
 
 public:
+    Passenger(std::string& , std::string& , std::string& , std::string& , std::string& , std::string& );
     bool login(void) override;
     bool logout(void) override;
     bool viewProfile(void) override;
     bool editProfile(void) override;
     bool deleteProfile(void) override;
-    bool registerUser(void) override;
-
+    
     bool bookFlight(void);
     bool cancelFlight(void);
     bool viewPassengerFlightHistory(void);
     bool viewLoyaltyPoints(void);
     bool redeemLoyaltyPoints(void);
+
+    bool SearchUser(int) = 0;
+
+    std::string getPassengerID(void) const;
 };
 
 class Administrator : public User
@@ -69,14 +79,24 @@ public:
     bool viewProfile(void) override;
     bool editProfile(void) override;
     bool deleteProfile(void) override;
-    bool registerUser(void) override;
 
     bool addFlight(void);
     bool removeFlight(void);
     bool viewFlightSchedules(void);
     bool manageUsers(void);
+    bool SearchUser(int) override;
+
     bool addNewAdmin(void);
     bool addNewBookingAgent(void);
+
+    bool addNewCrewMember(void);
+    bool removeCrewMember(void);
+    bool viewCrewMembers(void);
+
+    bool addNewAircraft(void);
+    bool removeAircraft(void);
+    bool viewAircrafts(void);
+
 };
 
 class BookingAgent : public User
@@ -86,10 +106,12 @@ public:
     bool logout(void) override;
     bool viewProfile(void) override;
     bool editProfile(void) override;
-    bool deleteProfile(void) override;
-    bool registerUser(void) override;
+
+    bool deleteProfile(void) override; //for users not booking agents, they can't delete their profile
+    bool SearchUser(int) override;
 
     bool assistCheckIn(void);
     bool handlePayment(void);
 };
+
 #endif
