@@ -44,7 +44,7 @@ private:
     std::shared_ptr<Reservation> reservation;
 
 public:
-    Flight(std::string flightID, std::string departure, std::string arrival, std::string date, int duration, int capacity, double price);
+    Flight(std::string departure, std::string arrival, std::string date, int duration, int capacity, double price);
 
     bool addCrewMember(std::shared_ptr<Crew> crewMember);
     bool removeCrewMember(std::shared_ptr<Crew> crewMember);
@@ -105,7 +105,7 @@ public:
 class Pilot : public Crew
 {
 public:
-    Pilot(std::string&, std::string&);
+    Pilot(std::string&);
     bool assignSalary(double duration);
     bool viewCrewDetails();
     bool editCrewDetails();
@@ -115,7 +115,7 @@ public:
 class FlightAttendant : public Crew
 {
     public:
-    FlightAttendant(std::string&, std::string&);
+    FlightAttendant(std::string&);
     bool assignSalary(double duration);
     bool viewCrewDetails();
     bool editCrewDetails();

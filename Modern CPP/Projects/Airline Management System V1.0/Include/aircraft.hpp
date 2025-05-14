@@ -3,7 +3,7 @@ Author: Mohamed Newir
 Date: 10/05/2025
 File: aircraft.hpp
 Description:
-    o 
+    o
 */
 
 #ifndef AIRCRAFT_HPP
@@ -17,10 +17,11 @@ Description:
 
 #include "dataHandling.hpp"
 
-class Maintainence{
+class Maintenance
+{
 
 private:
-    std::string maintainenceID;
+    std::string MaintenanceID;
     std::string aircraftID;
     std::string date;
     std::string description;
@@ -28,10 +29,12 @@ private:
     double cost;
 
 public:
-    Maintainence(std::string& , std::string& , std::string& , std::string&);
-    bool viewMaintainenceRecord();
+    Maintenance(std::string &aircraftID, std::string &date,
+                std::string &description, std::string &status, double cost);
+    bool viewMaintenanceRecord() const;
+    bool deleteMaintenanceRecords();
 
-    std::string getMaintainenceID() const;
+    std::string getMaintenanceID() const;
     std::string getAircraftID() const;
     std::string getDate() const;
     std::string getDescription() const;
@@ -39,7 +42,8 @@ public:
     double getCost() const;
 };
 
-class Aircraft{
+class Aircraft
+{
 
 private:
     std::string aircraftID;
@@ -50,21 +54,21 @@ private:
     double range;
     double speed;
     double fuelCapacity;
-    
-    std::vector<Maintainence> maintainenceRecords;
+
+    std::vector<Maintenance> MaintenanceRecords;
 
 public:
-    Aircraft(std::string& , std::string& , std::string& , int, double, double, double);
-    bool setAircraftID(std::string& aircraftID);
-    bool addMaintainenceRecord(Maintainence record);
-    bool viewMaintainenceRecords();
+    Aircraft(std::string &aircraftType, std::string &status, int capacity,
+            double range, double speed, double fuelCapacity, std::string &location);
+    bool addMaintenanceRecord(Maintenance record);
+    bool viewMaintenanceRecords() const;
 
     bool editAircraftDetails();
     bool deleteAircraft();
 
     bool viewAircraftDetails();
     bool checkAvailability();
-
+    bool setAircraftID(const std::string &aircraftID);
     std::string getAircraftID() const;
     std::string getAircraftType() const;
     std::string getStatus() const;
@@ -74,6 +78,5 @@ public:
     double getSpeed() const;
     double getFuelCapacity() const;
 };
-
 
 #endif

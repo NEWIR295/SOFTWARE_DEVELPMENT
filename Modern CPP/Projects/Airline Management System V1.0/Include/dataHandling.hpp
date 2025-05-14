@@ -33,6 +33,7 @@ public:
     static bool saveData(const std::shared_ptr<Aircraft>, const std::string &filename);
     static bool saveData(const std::shared_ptr<Crew>, const std::string &filename);
     static bool saveData(const std::shared_ptr<User>, const std::string &filename);
+    static bool saveData(const std::shared_ptr<Maintenance>, const std::string &filename);
 
     // Load data functions
     static std::shared_ptr<Reservation> loadReservationData(const std::string &filename);
@@ -46,6 +47,7 @@ public:
     static bool removeData(std::shared_ptr<Aircraft>, const std::string &filename);
     static bool removeData(std::shared_ptr<Crew>, const std::string &filename);
     static bool removeData(std::shared_ptr<User>, const std::string &filename);
+    static bool removeData(std::shared_ptr<Maintenance>, const std::string &filename);
 
     // Specialized functions
     static std::shared_ptr<Flight> loadFlightData(std::string &flightID, const std::string &filename);

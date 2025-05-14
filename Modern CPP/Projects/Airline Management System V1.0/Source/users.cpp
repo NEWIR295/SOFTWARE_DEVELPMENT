@@ -746,6 +746,12 @@ bool Administrator::addNewCrewMember(void)
     {
         std::shared_ptr<Crew> newCrewMember = std::make_shared<Pilot>(name);
         newCrewMember->setUserId(DataHandling::generateUniqueID("crew.json"));
+        if (!DataHandling::saveData(newCrewMember, "crew.json"))
+        {
+            std::cerr << "Error: Could not save crew member data." << std::endl;
+            return false;
+        }
+        return true;
     }
     else if (role == "Flight Attendant")
     {
