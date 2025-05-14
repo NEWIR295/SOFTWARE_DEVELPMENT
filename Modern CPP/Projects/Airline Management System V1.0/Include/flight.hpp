@@ -41,10 +41,11 @@ private:
     std::vector<std::shared_ptr<Crew>> crewMembers;
     std::vector<std::shared_ptr<Passenger>> passengers;
     std::vector<std::shared_ptr<Crew>> crew;
-    std::shared_ptr<Reservation> reservation;
+    std::vector<std::shared_ptr<Reservation>> reservations;
 
 public:
-    Flight(std::string departure, std::string arrival, std::string date, int duration, int capacity, double price);
+    Flight(std::string departure, std::string arrival, std::string date, int duration, double price, 
+            std::shared_ptr<Aircraft> aircraft);
 
     bool addCrewMember(std::shared_ptr<Crew> crewMember);
     bool removeCrewMember(std::shared_ptr<Crew> crewMember);
@@ -62,6 +63,7 @@ public:
     bool viewAvailableSeats();
     bool viewCrewMembers();
     bool viewPassengers();
+    bool viewFlightHistory();
     bool viewFlightDetails();
 
     bool addReservation(std::shared_ptr<Reservation> reservation);
@@ -84,9 +86,10 @@ class Crew
 private:
     std::string crewID;
     std::string name;
+    std::string role;
 
 protected:
-    Crew(std::string&);
+    Crew(std::string&, std::string&);
 
 public:
     virtual bool assignSalary(double duration) = 0;
@@ -94,11 +97,11 @@ public:
     virtual bool editCrewDetails() = 0;
     virtual bool deleteCrew() = 0;
 
-    bool setUserId(const std::string& userId);
-
     std::string getCrewID() const;
     std::string getCrewName() const;
     std::string getCrewRole() const;
+
+    bool setUserId(std::string);
 
 };
 
@@ -142,7 +145,9 @@ public:
     bool getIsAvailable() const;
     void setIsAvailable(bool available);
 };
-
+/*
+    implement strategy pattern for payment methods
+*/
 class PaymentMethod
 {
 
@@ -209,8 +214,6 @@ public:
     bool deleteReservation();
     bool editReservation();
     bool viewReservation();
-    bool checkIn();
-    bool cancelReservation();
 
     std::string getReservationID() const;
     std::string getFlightID() const;
@@ -218,6 +221,7 @@ public:
     std::string getSeatID() const;  
     std::string getDate() const;
     std::string getStatus() const;
+    bool checkIn();
 };
 
 #endif

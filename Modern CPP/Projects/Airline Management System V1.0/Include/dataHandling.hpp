@@ -30,6 +30,10 @@ public:
     // Save data functions
     static bool saveData(const std::shared_ptr<Reservation>, const std::string &filename);
     static bool saveData(const std::shared_ptr<Flight>, const std::string &filename);
+    static bool saveData(const std::shared_ptr<Flight>,  const std::vector<std::shared_ptr<Reservation>>,
+                                                 const std::string &filename);
+
+    
     static bool saveData(const std::shared_ptr<Aircraft>, const std::string &filename);
     static bool saveData(const std::shared_ptr<Crew>, const std::string &filename);
     static bool saveData(const std::shared_ptr<User>, const std::string &filename);
