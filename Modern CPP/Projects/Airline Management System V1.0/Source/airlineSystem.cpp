@@ -6,3 +6,17 @@ Description:
     o 
     o 
 */
+
+#include "../Include/airlineSystem.hpp"
+#include "../Include/users.hpp"
+#include "../Include/aircraft.hpp"
+#include "../Include/flight.hpp"
+#include "../Include/dataHandling.hpp"
+
+void AirlineSystem::displayMenu(){
+
+}
+void AirlineSystem::run(){
+    
+}
+

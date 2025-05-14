@@ -3,7 +3,7 @@ Author: Mohamed Newir
 Date: 10/05/2025
 File: aircraft.cpp
 Description:
-    o 
+    o
 */
 
 #include "../Include/aircraft.hpp"
@@ -16,8 +16,8 @@ Aircraft::Aircraft(std::string &aircraftType, std::string &status, int capacity,
     : aircraftType(aircraftType), status(status),
       capacity(capacity), range(range), speed(speed), fuelCapacity(fuelCapacity), location(location)
 {
-    // متنساش تظبط في ال 
-    //.json انه يعمل 
+    // متنساش تظبط في ال
+    //.json انه يعمل
     // seat id بعدد ال capacity
     this->aircraftID = DataHandling::generateUniqueID("aircraft.json");
     // Save the aircraft details to the file
@@ -181,18 +181,18 @@ double Aircraft::getFuelCapacity() const
     return fuelCapacity;
 }
 
-bool Aircraft::setAircraftID(const std::string &aircraftID){
+bool Aircraft::setAircraftID(const std::string &aircraftID)
+{
     this->aircraftID = DataHandling::generateUniqueID("aircraft.json");
     return true;
 }
-
 
 /*
     Maintenance class Implementation
 */
 
 Maintenance::Maintenance(std::string &aircraftID, std::string &date,
-                           std::string &description, std::string &status, double cost) : aircraftID(aircraftID), date(date), description(description), status(status), cost(cost)
+                         std::string &description, std::string &status, double cost) : aircraftID(aircraftID), date(date), description(description), status(status), cost(cost)
 {
     this->MaintenanceID = DataHandling::generateUniqueID("Maintenance.json");
     // Save the Maintenance record to the file

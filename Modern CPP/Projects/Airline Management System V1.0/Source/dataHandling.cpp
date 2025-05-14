@@ -51,21 +51,20 @@ void to_json(json &j, const Flight &flight)
         {"availableSeats", flight.getAvailableSeats()},
         {"price", flight.getPrice()},
         {"aircraftID", flight.getAircraftID()},
-        {"crewMembers", json::array()},        
-        {"passengers", json::array()},         
-        {"reservations", json::array()}        
-    };
+        {"crewMembers", json::array()},
+        {"passengers", json::array()},
+        {"reservations", json::array()}};
 
     // Serialize crew members
     for (const auto &crew : flight.getCrewMembers())
     {
-        j["crewMembers"].push_back(*crew); 
+        j["crewMembers"].push_back(*crew);
     }
 
     // Serialize passengers
     for (const auto &passenger : flight.getPassengers())
     {
-        j["passengers"].push_back(*passenger);\
+        j["passengers"].push_back(*passenger);
     }
 }
 
@@ -318,9 +317,8 @@ bool DataHandling::removeData(std::shared_ptr<Reservation> reservation, const st
     try
     {
         json data = readJsonFromFile(filename);
-        auto it = std::remove_if(data.begin(), data.end(), [&](const json &item) {
-            return item["reservationID"] == reservation->getReservationID();
-        });
+        auto it = std::remove_if(data.begin(), data.end(), [&](const json &item)
+                                 { return item["reservationID"] == reservation->getReservationID(); });
         if (it != data.end())
         {
             data.erase(it, data.end());
@@ -340,9 +338,8 @@ bool DataHandling::removeData(std::shared_ptr<Flight> flight, const std::string 
     try
     {
         json data = readJsonFromFile(filename);
-        auto it = std::remove_if(data.begin(), data.end(), [&](const json &item) {
-            return item["flightID"] == flight->getFlightID();
-        });
+        auto it = std::remove_if(data.begin(), data.end(), [&](const json &item)
+                                 { return item["flightID"] == flight->getFlightID(); });
         if (it != data.end())
         {
             data.erase(it, data.end());
@@ -357,14 +354,13 @@ bool DataHandling::removeData(std::shared_ptr<Flight> flight, const std::string 
     return false;
 }
 
-bool DataHandling::removeData(std::shared_ptr<Aircraft>  aircraft, const std::string &filename)
+bool DataHandling::removeData(std::shared_ptr<Aircraft> aircraft, const std::string &filename)
 {
     try
     {
         json data = readJsonFromFile(filename);
-        auto it = std::remove_if(data.begin(), data.end(), [&](const json &item) {
-            return item["aircraftID"] == aircraft->getAircraftID();
-        });
+        auto it = std::remove_if(data.begin(), data.end(), [&](const json &item)
+                                 { return item["aircraftID"] == aircraft->getAircraftID(); });
         if (it != data.end())
         {
             data.erase(it, data.end());
@@ -384,9 +380,8 @@ bool DataHandling::removeData(std::shared_ptr<Crew> crew, const std::string &fil
     try
     {
         json data = readJsonFromFile(filename);
-        auto it = std::remove_if(data.begin(), data.end(), [&](const json &item) {
-            return item["crewID"] == crew->getCrewID();
-        });
+        auto it = std::remove_if(data.begin(), data.end(), [&](const json &item)
+                                 { return item["crewID"] == crew->getCrewID(); });
         if (it != data.end())
         {
             data.erase(it, data.end());
@@ -406,9 +401,8 @@ bool DataHandling::removeData(std::shared_ptr<User> user, const std::string &fil
     try
     {
         json data = readJsonFromFile(filename);
-        auto it = std::remove_if(data.begin(), data.end(), [&](const json &item) {
-            return item["userID"] == user->getUserID();
-        });
+        auto it = std::remove_if(data.begin(), data.end(), [&](const json &item)
+                                 { return item["userID"] == user->getUserID(); });
         if (it != data.end())
         {
             data.erase(it, data.end());
@@ -428,9 +422,8 @@ bool DataHandling::removeData(std::shared_ptr<Maintenance> maintenance, const st
     try
     {
         json data = readJsonFromFile(filename);
-        auto it = std::remove_if(data.begin(), data.end(), [&](const json &item) {
-            return item["maintenanceID"] == maintenance->getMaintenanceID();
-        });
+        auto it = std::remove_if(data.begin(), data.end(), [&](const json &item)
+                                 { return item["maintenanceID"] == maintenance->getMaintenanceID(); });
         if (it != data.end())
         {
             data.erase(it, data.end());
@@ -660,7 +653,8 @@ bool DataHandling::authenticateUser(std::string &username, std::string &password
     {
         std::cerr << "Error authenticating user: " << e.what() << std::endl;
     }
-    return false;}
+    return false;
+}
 
 std::string DataHandling::generateUniqueID(const std::string &filename)
 {

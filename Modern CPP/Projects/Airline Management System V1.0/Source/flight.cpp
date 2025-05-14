@@ -296,13 +296,18 @@ double Flight::getPrice() const
     return price;
 }
 
-std::string Flight::getAircraftID() const{
+std::string Flight::getAircraftID() const
+{
     return aircraft->getAircraftID();
 }
 
 std::vector<std::shared_ptr<Crew>> Flight::getCrewMembers() const
 {
     return crewMembers;
+}
+std::vector<std::shared_ptr<Passenger>> Flight::getPassengers() const
+{
+    return passengers;
 }
 
 /*

@@ -23,8 +23,7 @@ Description:
 
 std::map<std::string, double> crewSalaryPerHourIn$ = {
     {"Pilot", 96.00},
-    {"Flight Attendant", 28.0}
-};
+    {"Flight Attendant", 28.0}};
 
 class Flight
 {
@@ -44,8 +43,8 @@ private:
     std::vector<std::shared_ptr<Reservation>> reservations;
 
 public:
-    Flight(std::string departure, std::string arrival, std::string date, int duration, double price, 
-            std::shared_ptr<Aircraft> aircraft);
+    Flight(std::string departure, std::string arrival, std::string date, int duration, double price,
+           std::shared_ptr<Aircraft> aircraft);
 
     bool addCrewMember(std::shared_ptr<Crew> crewMember);
     bool removeCrewMember(std::shared_ptr<Crew> crewMember);
@@ -93,7 +92,7 @@ private:
     int salary;
 
 protected:
-    Crew(const std::string&, const std::string&);
+    Crew(const std::string &, const std::string &);
 
 public:
     virtual bool assignSalary(double duration) = 0;
@@ -108,13 +107,12 @@ public:
     bool setSalary(int amount);
 
     bool setUserId(std::string);
-
 };
 
 class Pilot : public Crew
 {
 public:
-    Pilot(const std::string& name, const std::string& role = "Pilot");
+    Pilot(const std::string &name, const std::string &role = "Pilot");
     bool assignSalary(double duration);
     bool viewCrewDetails();
     bool editCrewDetails();
@@ -123,8 +121,8 @@ public:
 
 class FlightAttendant : public Crew
 {
-    public:
-    FlightAttendant(const std::string& name, const std::string& role = "Flight Attendant");
+public:
+    FlightAttendant(const std::string &name, const std::string &role = "Flight Attendant");
     bool assignSalary(double duration);
     bool viewCrewDetails();
     bool editCrewDetails();
@@ -221,7 +219,7 @@ public:
     std::string getReservationID() const;
     std::string getFlightID() const;
     std::string getPassengerID() const;
-    std::string getSeatID() const;  
+    std::string getSeatID() const;
     std::string getDate() const;
     std::string getStatus() const;
     bool checkIn();

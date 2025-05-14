@@ -59,7 +59,7 @@ private:
 
 public:
     Aircraft(std::string &aircraftType, std::string &status, int capacity,
-            double range, double speed, double fuelCapacity, std::string &location);
+             double range, double speed, double fuelCapacity, std::string &location);
     bool addMaintenanceRecord(Maintenance record);
     bool viewMaintenanceRecords() const;
 

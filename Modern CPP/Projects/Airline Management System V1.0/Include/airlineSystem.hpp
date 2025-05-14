@@ -18,10 +18,7 @@ Description:
 class AirlineSystem
 {
 private:
-void displayMenu();
-// void handleUserInput();
-// void saveData();
-// void loadData();
+    void displayMenu();
 
 public:
     void run();

@@ -158,7 +158,8 @@ bool User::setAddress(const std::string &address)
     return true;
 }
 
-bool User::editProfile(void){
+bool User::editProfile(void)
+{
     std::string newUsername, newPassword, newEmail, newPhone, newName, newAddress;
     while (1)
     {
@@ -267,7 +268,7 @@ bool Passenger::viewProfile(void)
 
 bool Passenger::editProfile(void)
 {
-    
+
     User::editProfile();
     DataHandling::saveData(std::make_shared<Passenger>(*this), "passengers.json");
     return true;
@@ -338,15 +339,18 @@ bool Passenger::viewPassengerFlightHistory(void)
     if (passenger)
     {
         std::vector<std::shared_ptr<Reservation>> reservations = DataHandling::loadReservationsForPassenger(passengerID, "reservations.json");
-        if (reservations.empty()) {
+        if (reservations.empty())
+        {
             std::cout << "No flight history found." << std::endl;
             return false;
         }
 
         std::cout << "Flight History:" << std::endl;
-        for (const auto &reservation : reservations) {
+        for (const auto &reservation : reservations)
+        {
             reservation->viewReservation();
-        }        return true;
+        }
+        return true;
     }
     else
     {
@@ -378,7 +382,6 @@ bool Passenger::redeemLoyaltyPoints(void)
         DataHandling::saveData(std::make_shared<Passenger>(*this), "passengers.json");
         return true;
     }
-
 }
 
 /*
@@ -842,7 +845,7 @@ bool Administrator::addNewAircraft(void)
 
     // Create a new Aircraft object
     std::shared_ptr<Aircraft> newAircraft = std::make_shared<Aircraft>(aircraftType, status, location,
-                                                                    capacity, range, speed, fuelCapacity);
+                                                                       capacity, range, speed, fuelCapacity);
     newAircraft->setAircraftID(aircraftID);
 
     if (!DataHandling::saveData(newAircraft, "aircraft.json"))

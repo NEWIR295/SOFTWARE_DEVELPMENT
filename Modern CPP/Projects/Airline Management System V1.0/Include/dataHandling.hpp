@@ -30,8 +30,8 @@ public:
     // Save data functions
     static bool saveData(const std::shared_ptr<Reservation>, const std::string &filename);
     static bool saveData(const std::shared_ptr<Flight>, const std::string &filename);
-    static bool saveData(const std::shared_ptr<Flight>,  const std::vector<std::shared_ptr<Reservation>>,
-                                                 const std::string &filename);
+    static bool saveData(const std::shared_ptr<Flight>, const std::vector<std::shared_ptr<Reservation>>,
+                         const std::string &filename);
     static bool saveData(const std::shared_ptr<PaymentMethod>, const std::string &filename);
     static bool saveData(const std::shared_ptr<Payment>, const std::string &filename);
 
@@ -62,7 +62,7 @@ public:
     static std::shared_ptr<Passenger> loadPassengerData(std::string &passengerID, const std::string &filename);
     static std::shared_ptr<Aircraft> loadAircraftData(std::string &aircraftID, const std::string &filename);
     static std::shared_ptr<Crew> loadCrewData(std::string &crewID, const std::string &filename);
-    
+
     // Load all data functions
     static std::vector<std::shared_ptr<Reservation>> loadReservationsForPassenger(std::string &passengerID, const std::string &filename);
     static std::vector<std::shared_ptr<Crew>> loadAllCrewData(const std::string &filename);
