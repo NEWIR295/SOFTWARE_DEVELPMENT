@@ -78,6 +78,9 @@ public:
     int getCapacity() const;
     int getAvailableSeats() const;
     double getPrice() const;
+    std::string getAircraftID() const;
+    std::vector<std::shared_ptr<Crew>> getCrewMembers() const;
+    std::vector<std::shared_ptr<Passenger>> getPassengers() const;
 };
 
 // المفروض يقري من الفايل الكرو الموجودين

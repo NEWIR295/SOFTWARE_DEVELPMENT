@@ -39,6 +39,36 @@ static void writeJsonToFile(const json &data, const std::string &filename)
     file << data.dump(4);
 }
 
+void to_json(json &j, const Flight &flight)
+{
+    j = json{
+        {"flightID", flight.getFlightID()},
+        {"departure", flight.getDeparture()},
+        {"arrival", flight.getArrival()},
+        {"date", flight.getDate()},
+        {"duration", flight.getDuration()},
+        {"capacity", flight.getCapacity()},
+        {"availableSeats", flight.getAvailableSeats()},
+        {"price", flight.getPrice()},
+        {"aircraftID", flight.getAircraftID()},
+        {"crewMembers", json::array()},        
+        {"passengers", json::array()},         
+        {"reservations", json::array()}        
+    };
+
+    // Serialize crew members
+    for (const auto &crew : flight.getCrewMembers())
+    {
+        j["crewMembers"].push_back(*crew); 
+    }
+
+    // Serialize passengers
+    for (const auto &passenger : flight.getPassengers())
+    {
+        j["passengers"].push_back(*passenger);\
+    }
+}
+
 // Save data functions
 bool DataHandling::saveData(const std::shared_ptr<Reservation> reservation, const std::string &filename)
 {
@@ -77,8 +107,17 @@ bool DataHandling::saveData(const std::shared_ptr<Flight> flight, const std::vec
     try
     {
         json data = readJsonFromFile(filename);
-        json flightData = *flight;
-        flightData["reservations"] = reservations;
+        json flightData;
+        to_json(flightData, *flight); // Assuming a to_json function exists for Flight
+
+        // Convert reservations to a JSON array
+        json reservationsJson = json::array();
+        for (const auto &reservation : reservations)
+        {
+            reservationsJson.emplace_back(*reservation); // Assuming Reservation has a to_json method or is serializable
+        }
+
+        flightData["reservations"] = reservationsJson;
         data.push_back(flightData);
         writeJsonToFile(data, filename);
         return true;
@@ -340,19 +379,70 @@ bool DataHandling::removeData(std::shared_ptr<Aircraft>  aircraft, const std::st
     return false;
 }
 
-bool DataHandling::removeData(std::shared_ptr<Crew>, const std::string &filename)
+bool DataHandling::removeData(std::shared_ptr<Crew> crew, const std::string &filename)
 {
-    // Implementation here...
+    try
+    {
+        json data = readJsonFromFile(filename);
+        auto it = std::remove_if(data.begin(), data.end(), [&](const json &item) {
+            return item["crewID"] == crew->getCrewID();
+        });
+        if (it != data.end())
+        {
+            data.erase(it, data.end());
+            writeJsonToFile(data, filename);
+            return true;
+        }
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Error removing crew data: " << e.what() << std::endl;
+    }
+    return false;
 }
 
-bool DataHandling::removeData(std::shared_ptr<User>, const std::string &filename)
+bool DataHandling::removeData(std::shared_ptr<User> user, const std::string &filename)
 {
-    // Implementation here...
+    try
+    {
+        json data = readJsonFromFile(filename);
+        auto it = std::remove_if(data.begin(), data.end(), [&](const json &item) {
+            return item["userID"] == user->getUserID();
+        });
+        if (it != data.end())
+        {
+            data.erase(it, data.end());
+            writeJsonToFile(data, filename);
+            return true;
+        }
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Error removing user data: " << e.what() << std::endl;
+    }
+    return false;
 }
 
-bool DataHandling::removeData(std::shared_ptr<Maintenance>, const std::string &filename)
+bool DataHandling::removeData(std::shared_ptr<Maintenance> maintenance, const std::string &filename)
 {
-    // Implementation here...
+    try
+    {
+        json data = readJsonFromFile(filename);
+        auto it = std::remove_if(data.begin(), data.end(), [&](const json &item) {
+            return item["maintenanceID"] == maintenance->getMaintenanceID();
+        });
+        if (it != data.end())
+        {
+            data.erase(it, data.end());
+            writeJsonToFile(data, filename);
+            return true;
+        }
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Error removing maintenance data: " << e.what() << std::endl;
+    }
+    return false;
 }
 
 // Specialized functions
@@ -459,22 +549,77 @@ std::shared_ptr<Crew> DataHandling::loadCrewData(std::string &crewID, const std:
 // Load all data functions
 std::vector<std::shared_ptr<Reservation>> DataHandling::loadReservationsForPassenger(std::string &passengerID, const std::string &filename)
 {
-    // Implementation here...
+    std::vector<std::shared_ptr<Reservation>> reservations;
+    try
+    {
+        json data = readJsonFromFile(filename);
+        for (const auto &item : data)
+        {
+            if (item["userID"] == passengerID)
+            {
+                reservations.push_back(std::make_shared<Reservation>(item));
+            }
+        }
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Error loading reservations for passenger: " << e.what() << std::endl;
+    }
+    return reservations;
 }
 
 std::vector<std::shared_ptr<Crew>> DataHandling::loadAllCrewData(const std::string &filename)
 {
-    // Implementation here...
+    std::vector<std::shared_ptr<Crew>> crewList;
+    try
+    {
+        json data = readJsonFromFile(filename);
+        for (const auto &item : data)
+        {
+            crewList.push_back(std::make_shared<Crew>(item));
+        }
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Error loading all crew data: " << e.what() << std::endl;
+    }
+    return crewList;
 }
 
 std::vector<std::shared_ptr<Aircraft>> DataHandling::loadAllAircraftData(const std::string &filename)
 {
-    // Implementation here...
+    std::vector<std::shared_ptr<Aircraft>> aircraftList;
+    try
+    {
+        json data = readJsonFromFile(filename);
+        for (const auto &item : data)
+        {
+            aircraftList.push_back(std::make_shared<Aircraft>(item));
+        }
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Error loading all aircraft data: " << e.what() << std::endl;
+    }
+    return aircraftList;
 }
 
 std::vector<std::shared_ptr<Seat>> DataHandling::loadAircraftSeats(const std::string &filename)
 {
-    // Implementation here...
+    std::vector<std::shared_ptr<Seat>> seats;
+    try
+    {
+        json data = readJsonFromFile(filename);
+        for (const auto &item : data)
+        {
+            seats.push_back(std::make_shared<Seat>(item));
+        }
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Error loading aircraft seats: " << e.what() << std::endl;
+    }
+    return seats;
 }
 
 // Utility functions
