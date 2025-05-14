@@ -14,6 +14,9 @@ Description:
 #include <vector>
 #include <algorithm>
 #include <fstream>
+#include "dataHandling.hpp"
+#include "flight.hpp"
+#include "aircraft.hpp"
 
 enum rank{
     ADMINISTRATOR,
@@ -29,7 +32,8 @@ private:
     std::string phone;
     std::string name;
     std::string address;
-    int userID;
+    std::string userID;
+    int loyaltyPoints = 0;
 
 public:
     User(std::string& , std::string& , std::string& , std::string& , std::string& , std::string&);
@@ -37,18 +41,33 @@ public:
     virtual bool logout(void) = 0;
     virtual bool viewProfile(void) = 0;
     virtual bool editProfile(void) = 0;
-    virtual bool deleteProfile(void) = 0;
-    bool registerUser(void);
+    bool deleteProfile(void);
+    bool registerUser(void);    
 
-    virtual bool SearchUser(int) = 0;
+    bool SearchUser(std::string& userId); //view its profile
+
+    std::string getUsername(void) const;
+    std::string getPassword(void) const;
+    std::string getEmail(void) const;
+    std::string getPhone(void) const;
+    std::string getName(void) const;
+    std::string getAddress(void) const;
+    std::string getUserID(void) const;
+
+    int getLoyaltyPoints(void) const;
+    void setLoyaltyPoints(int);
+
+    bool setUserId(const std::string& userId);
+    bool setUsername(const std::string& username);
+    bool setPassword(const std::string& password);
+    bool setEmail(const std::string& email);
+    bool setPhone(const std::string& phone);
+    bool setName(const std::string& name);
+    bool setAddress(const std::string& address);
 };
 
 class Passenger : public User
 {
-
-private:
-    int loyaltyPoints;
-    std::string passengerID;
 
 public:
     Passenger(std::string& , std::string& , std::string& , std::string& , std::string& , std::string& );
@@ -56,17 +75,18 @@ public:
     bool logout(void) override;
     bool viewProfile(void) override;
     bool editProfile(void) override;
-    bool deleteProfile(void) override;
+
     
     bool bookFlight(void);
     bool cancelFlight(void);
     bool viewPassengerFlightHistory(void);
+
     bool viewLoyaltyPoints(void);
     bool redeemLoyaltyPoints(void);
 
-    bool SearchUser(int) = 0;
+    bool SearchUser(std::string& userId) = delete; // passengers can't search for other users
+    bool registerUser(void) = delete; // passengers can't register themselves
 
-    std::string getPassengerID(void) const;
 };
 
 class Administrator : public User
@@ -74,17 +94,16 @@ class Administrator : public User
 
 private:
 public:
+    Administrator(std::string& , std::string& , std::string& , std::string& , std::string& , std::string&);
     bool login(void) override;
     bool logout(void) override;
     bool viewProfile(void) override;
     bool editProfile(void) override;
-    bool deleteProfile(void) override;
 
+    
     bool addFlight(void);
     bool removeFlight(void);
     bool viewFlightSchedules(void);
-    bool manageUsers(void);
-    bool SearchUser(int) override;
 
     bool addNewAdmin(void);
     bool addNewBookingAgent(void);
@@ -97,21 +116,24 @@ public:
     bool removeAircraft(void);
     bool viewAircrafts(void);
 
+    int getLoyaltyPoints(void) const = delete;
+
 };
 
 class BookingAgent : public User
 {
 public:
+    BookingAgent(std::string& , std::string& , std::string& , std::string& , std::string& , std::string&);
     bool login(void) override;
     bool logout(void) override;
     bool viewProfile(void) override;
     bool editProfile(void) override;
 
-    bool deleteProfile(void) override; //for users not booking agents, they can't delete their profile
-    bool SearchUser(int) override;
 
     bool assistCheckIn(void);
     bool handlePayment(void);
+
+    int getLoyaltyPoints(void) const = delete;
 };
 
 #endif

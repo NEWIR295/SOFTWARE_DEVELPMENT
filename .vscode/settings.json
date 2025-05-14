@@ -76,7 +76,10 @@
         "codecvt": "cpp",
         "source_location": "cpp",
         "shared_mutex": "cpp",
-        "stdfloat": "cpp"
+        "stdfloat": "cpp",
+        "any": "cpp",
+        "ranges": "cpp",
+        "valarray": "cpp"
     },
     "cSpell.words": [
         "Newir"

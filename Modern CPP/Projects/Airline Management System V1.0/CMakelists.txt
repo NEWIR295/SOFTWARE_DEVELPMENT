@@ -20,11 +20,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 #set the sources to be compiled 
 set(SOURCES 
-    # ./Source/main.cpp
-    # ./Source/SudokuGame.cpp
-    # ./Source/SudokuBoard.cpp
-    # ./Source/SudokuSolver.cpp
-    # ./Source/SudokuGenerator.cpp
+    ./Source/main.cpp
+    ./Source/aircraft.cpp
+    ./Source/airlineSystem.cpp
+    ./Source/dataHandling.cpp
+    ./Source/flight.cpp
+    ./Source/users.cpp
 )
 
 #add the executable

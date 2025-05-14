@@ -15,6 +15,8 @@ Description:
 #include <algorithm>
 #include <fstream>
 
+#include "dataHandling.hpp"
+
 class Maintainence{
 
 private:
@@ -28,6 +30,13 @@ private:
 public:
     Maintainence(std::string& , std::string& , std::string& , std::string&);
     bool viewMaintainenceRecord();
+
+    std::string getMaintainenceID() const;
+    std::string getAircraftID() const;
+    std::string getDate() const;
+    std::string getDescription() const;
+    std::string getStatus() const;
+    double getCost() const;
 };
 
 class Aircraft{
@@ -45,6 +54,8 @@ private:
     std::vector<Maintainence> maintainenceRecords;
 
 public:
+    Aircraft(std::string& , std::string& , std::string& , int, double, double, double);
+    bool setAircraftID(std::string& aircraftID);
     bool addMaintainenceRecord(Maintainence record);
     bool viewMaintainenceRecords();
 
@@ -53,6 +64,15 @@ public:
 
     bool viewAircraftDetails();
     bool checkAvailability();
+
+    std::string getAircraftID() const;
+    std::string getAircraftType() const;
+    std::string getStatus() const;
+    std::string getLocation() const;
+    int getCapacity() const;
+    double getRange() const;
+    double getSpeed() const;
+    double getFuelCapacity() const;
 };
 
 

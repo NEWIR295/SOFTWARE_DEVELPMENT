@@ -19,6 +19,7 @@ Description:
 
 #include "aircraft.hpp"
 #include "users.hpp"
+#include "dataHandling.hpp"
 
 std::map<std::string, double> crewSalaryPerHourIn$ = {
     {"Pilot", 96.00},
@@ -61,7 +62,6 @@ public:
     bool viewAvailableSeats();
     bool viewCrewMembers();
     bool viewPassengers();
-    bool viewFlightHistory();
     bool viewFlightDetails();
 
     bool addReservation(std::shared_ptr<Reservation> reservation);
@@ -69,6 +69,13 @@ public:
     bool checkAvailability();
 
     std::string getFlightID() const;
+    std::string getDeparture() const;
+    std::string getArrival() const;
+    std::string getDate() const;
+    int getDuration() const;
+    int getCapacity() const;
+    int getAvailableSeats() const;
+    double getPrice() const;
 };
 
 // المفروض يقري من الفايل الكرو الموجودين
@@ -77,16 +84,17 @@ class Crew
 private:
     std::string crewID;
     std::string name;
-    std::string role;
 
 protected:
-    Crew(std::string&, std::string&, std::string&);
+    Crew(std::string&);
 
 public:
     virtual bool assignSalary(double duration) = 0;
     virtual bool viewCrewDetails() = 0;
     virtual bool editCrewDetails() = 0;
     virtual bool deleteCrew() = 0;
+
+    bool setUserId(const std::string& userId);
 
     std::string getCrewID() const;
     std::string getCrewName() const;
@@ -97,7 +105,7 @@ public:
 class Pilot : public Crew
 {
 public:
-    Pilot(std::string&, std::string&, std::string&);
+    Pilot(std::string&, std::string&);
     bool assignSalary(double duration);
     bool viewCrewDetails();
     bool editCrewDetails();
@@ -107,7 +115,7 @@ public:
 class FlightAttendant : public Crew
 {
     public:
-    FlightAttendant(std::string&, std::string&, std::string&);
+    FlightAttendant(std::string&, std::string&);
     bool assignSalary(double duration);
     bool viewCrewDetails();
     bool editCrewDetails();
@@ -129,6 +137,10 @@ public:
     // bool editSeat();
 
     std::string getSeatID() const;
+    std::string getSeatClass() const;
+    std::string getSeatType() const;
+    bool getIsAvailable() const;
+    void setIsAvailable(bool available);
 };
 
 class PaymentMethod
@@ -197,6 +209,15 @@ public:
     bool deleteReservation();
     bool editReservation();
     bool viewReservation();
+    bool checkIn();
+    bool cancelReservation();
+
+    std::string getReservationID() const;
+    std::string getFlightID() const;
+    std::string getPassengerID() const;
+    std::string getSeatID() const;  
+    std::string getDate() const;
+    std::string getStatus() const;
 };
 
 #endif
