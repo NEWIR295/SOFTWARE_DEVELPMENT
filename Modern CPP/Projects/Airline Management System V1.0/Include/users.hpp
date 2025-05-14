@@ -40,7 +40,7 @@ public:
     virtual bool login(void) = 0;
     virtual bool logout(void) = 0;
     virtual bool viewProfile(void) = 0;
-    virtual bool editProfile(void) = 0;
+    virtual bool editProfile(void);
     bool deleteProfile(void);
     bool registerUser(void);    
 

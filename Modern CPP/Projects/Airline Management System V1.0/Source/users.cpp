@@ -157,57 +157,8 @@ bool User::setAddress(const std::string &address)
     this->address = address;
     return true;
 }
-/*
-    Passenger class Implementation
-*/
-Passenger::Passenger(std::string &username, std::string &password, std::string &email, std::string &phone,
-                     std::string &name, std::string &address) : User(username, password, email, phone, name, address)
-{
-    this->setUserId(DataHandling::generateUniqueID("passengers.json"));
-    DataHandling::saveData(std::make_shared<Passenger>(*this), "passengers.json");
-}
 
-bool Passenger::login(void)
-{
-    std::string username, password;
-    std::cout << "Enter username: ";
-    std::cin >> username;
-    std::cout << "Enter password: ";
-    std::cin >> password;
-
-    if (DataHandling::authenticateUser(username, password, "passengers.json"))
-    {
-        std::cout << "Login successful!" << std::endl;
-        return true;
-    }
-    else
-    {
-        std::cerr << "Login failed!" << std::endl;
-        return false;
-    }
-}
-
-bool Passenger::logout(void)
-{
-    std::cout << "Logging out..." << std::endl;
-    return true;
-}
-
-bool Passenger::viewProfile(void)
-{
-    std::cout << "Username: " << this->getUsername() << std::endl;
-    std::cout << "Password: " << this->getPassword() << std::endl;
-    std::cout << "Email: " << this->getEmail() << std::endl;
-    std::cout << "Phone: " << this->getPhone() << std::endl;
-    std::cout << "Name: " << this->getName() << std::endl;
-    std::cout << "Address: " << this->getAddress() << std::endl;
-    std::cout << "User ID: " << this->getUserID() << std::endl;
-    std::cout << "Loyalty Points: " << this->getLoyaltyPoints() << std::endl;
-    return true;
-}
-
-bool Passenger::editProfile(void)
-{
+bool User::editProfile(void){
     std::string newUsername, newPassword, newEmail, newPhone, newName, newAddress;
     while (1)
     {
@@ -263,7 +214,61 @@ bool Passenger::editProfile(void)
         if (choice == 7)
             break; // Exit the loop if the user chooses to exit
     }
+    return true;
+}
+/*
+    Passenger class Implementation
+*/
+Passenger::Passenger(std::string &username, std::string &password, std::string &email, std::string &phone,
+                     std::string &name, std::string &address) : User(username, password, email, phone, name, address)
+{
+    this->setUserId(DataHandling::generateUniqueID("passengers.json"));
+    DataHandling::saveData(std::make_shared<Passenger>(*this), "passengers.json");
+}
 
+bool Passenger::login(void)
+{
+    std::string username, password;
+    std::cout << "Enter username: ";
+    std::cin >> username;
+    std::cout << "Enter password: ";
+    std::cin >> password;
+
+    if (DataHandling::authenticateUser(username, password, "passengers.json"))
+    {
+        std::cout << "Login successful!" << std::endl;
+        return true;
+    }
+    else
+    {
+        std::cerr << "Login failed!" << std::endl;
+        return false;
+    }
+}
+
+bool Passenger::logout(void)
+{
+    std::cout << "Logging out..." << std::endl;
+    return true;
+}
+
+bool Passenger::viewProfile(void)
+{
+    std::cout << "Username: " << this->getUsername() << std::endl;
+    std::cout << "Password: " << this->getPassword() << std::endl;
+    std::cout << "Email: " << this->getEmail() << std::endl;
+    std::cout << "Phone: " << this->getPhone() << std::endl;
+    std::cout << "Name: " << this->getName() << std::endl;
+    std::cout << "Address: " << this->getAddress() << std::endl;
+    std::cout << "User ID: " << this->getUserID() << std::endl;
+    std::cout << "Loyalty Points: " << this->getLoyaltyPoints() << std::endl;
+    return true;
+}
+
+bool Passenger::editProfile(void)
+{
+    
+    User::editProfile();
     DataHandling::saveData(std::make_shared<Passenger>(*this), "passengers.json");
     return true;
 }
@@ -370,8 +375,10 @@ bool Passenger::redeemLoyaltyPoints(void)
     {
         this->setLoyaltyPoints(-points);
         std::cout << "Loyalty points redeemed successfully!" << std::endl;
+        DataHandling::saveData(std::make_shared<Passenger>(*this), "passengers.json");
         return true;
     }
+
 }
 
 /*
@@ -421,62 +428,7 @@ bool BookingAgent::viewProfile(void)
 }
 bool BookingAgent::editProfile(void)
 {
-    std::string newUsername, newPassword, newEmail, newPhone, newName, newAddress;
-    while (1)
-    {
-        std::cout << "Enter which field you want to edit: " << std::endl;
-        std::cout << "1. Username" << std::endl;
-        std::cout << "2. Password" << std::endl;
-        std::cout << "3. Email" << std::endl;
-        std::cout << "4. Phone" << std::endl;
-        std::cout << "5. Name" << std::endl;
-        std::cout << "6. Address" << std::endl;
-        std::cout << "7. Exit" << std::endl;
-        int choice;
-        std::cin >> choice;
-        switch (choice)
-        {
-        case 1:
-            std::cout << "Enter new username: ";
-            std::cin >> newUsername;
-            setUsername(newUsername);
-            break;
-        case 2:
-            std::cout << "Enter new password: ";
-            std::cin >> newPassword;
-            setPassword(newPassword);
-            break;
-        case 3:
-            std::cout << "Enter new email: ";
-            std::cin >> newEmail;
-            setEmail(newEmail);
-            break;
-        case 4:
-            std::cout << "Enter new phone: ";
-            std::cin >> newPhone;
-            setPhone(newPhone);
-            break;
-        case 5:
-            std::cout << "Enter new name: ";
-            std::cin >> newName;
-            setName(newName);
-            break;
-        case 6:
-            std::cout << "Enter new address: ";
-            std::cin >> newAddress;
-            setAddress(newAddress);
-            break;
-        case 7:
-            std::cout << "Exiting..." << std::endl;
-            break;
-        default:
-            std::cout << "Invalid choice. Please try again." << std::endl;
-            continue; // Continue the loop for invalid choice
-        }
-        if (choice == 7)
-            break; // Exit the loop if the user chooses to exit
-    }
-
+    User::editProfile();
     DataHandling::saveData(std::make_shared<BookingAgent>(*this), "bookingAgent.json");
     return true;
 }
@@ -623,62 +575,7 @@ bool Administrator::viewProfile(void)
 }
 bool Administrator::editProfile(void)
 {
-    std::string newUsername, newPassword, newEmail, newPhone, newName, newAddress;
-    while (1)
-    {
-        std::cout << "Enter which field you want to edit: " << std::endl;
-        std::cout << "1. Username" << std::endl;
-        std::cout << "2. Password" << std::endl;
-        std::cout << "3. Email" << std::endl;
-        std::cout << "4. Phone" << std::endl;
-        std::cout << "5. Name" << std::endl;
-        std::cout << "6. Address" << std::endl;
-        std::cout << "7. Exit" << std::endl;
-        int choice;
-        std::cin >> choice;
-        switch (choice)
-        {
-        case 1:
-            std::cout << "Enter new username: ";
-            std::cin >> newUsername;
-            setUsername(newUsername);
-            break;
-        case 2:
-            std::cout << "Enter new password: ";
-            std::cin >> newPassword;
-            setPassword(newPassword);
-            break;
-        case 3:
-            std::cout << "Enter new email: ";
-            std::cin >> newEmail;
-            setEmail(newEmail);
-            break;
-        case 4:
-            std::cout << "Enter new phone: ";
-            std::cin >> newPhone;
-            setPhone(newPhone);
-            break;
-        case 5:
-            std::cout << "Enter new name: ";
-            std::cin >> newName;
-            setName(newName);
-            break;
-        case 6:
-            std::cout << "Enter new address: ";
-            std::cin >> newAddress;
-            setAddress(newAddress);
-            break;
-        case 7:
-            std::cout << "Exiting..." << std::endl;
-            break;
-        default:
-            std::cout << "Invalid choice. Please try again." << std::endl;
-            continue; // Continue the loop for invalid choice
-        }
-        if (choice == 7)
-            break; // Exit the loop if the user chooses to exit
-    }
-
+    User::editProfile();
     DataHandling::saveData(std::make_shared<Administrator>(*this), "admin.json");
     return true;
 }
