@@ -16,6 +16,9 @@ Aircraft::Aircraft(std::string &aircraftType, std::string &status, int capacity,
     : aircraftType(aircraftType), status(status),
       capacity(capacity), range(range), speed(speed), fuelCapacity(fuelCapacity), location(location)
 {
+    // متنساش تظبط في ال 
+    //.json انه يعمل 
+    // seat id بعدد ال capacity
     this->aircraftID = DataHandling::generateUniqueID("aircraft.json");
     // Save the aircraft details to the file
     DataHandling::saveData(std::make_shared<Aircraft>(*this), "aircraft.json");

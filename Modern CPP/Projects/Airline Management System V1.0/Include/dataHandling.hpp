@@ -32,18 +32,21 @@ public:
     static bool saveData(const std::shared_ptr<Flight>, const std::string &filename);
     static bool saveData(const std::shared_ptr<Flight>,  const std::vector<std::shared_ptr<Reservation>>,
                                                  const std::string &filename);
+    static bool saveData(const std::shared_ptr<PaymentMethod>, const std::string &filename);
+    static bool saveData(const std::shared_ptr<Payment>, const std::string &filename);
 
-    
     static bool saveData(const std::shared_ptr<Aircraft>, const std::string &filename);
     static bool saveData(const std::shared_ptr<Crew>, const std::string &filename);
     static bool saveData(const std::shared_ptr<User>, const std::string &filename);
     static bool saveData(const std::shared_ptr<Maintenance>, const std::string &filename);
+    static bool saveData(const std::shared_ptr<Seat>, const std::string &filename);
 
     // Load data functions
     static std::shared_ptr<Reservation> loadReservationData(const std::string &filename);
     static std::shared_ptr<Flight> loadFlightData(const std::string &filename);
     static std::shared_ptr<Crew> loadCrewData(const std::string &filename);
     static std::shared_ptr<User> loadUserData(const std::string &filename);
+    static std::shared_ptr<PaymentMethod> loadData(const std::string &filename);
 
     // Remove data functions
     static bool removeData(std::shared_ptr<Reservation>, const std::string &filename);
@@ -64,6 +67,7 @@ public:
     static std::vector<std::shared_ptr<Reservation>> loadReservationsForPassenger(std::string &passengerID, const std::string &filename);
     static std::vector<std::shared_ptr<Crew>> loadAllCrewData(const std::string &filename);
     static std::vector<std::shared_ptr<Aircraft>> loadAllAircraftData(const std::string &filename);
+    static std::vector<std::shared_ptr<Seat>> loadAircraftSeats(const std::string &filename);
 
     // Utility functions
     static bool searchPassenger(std::string &passengerID, const std::string &filename);

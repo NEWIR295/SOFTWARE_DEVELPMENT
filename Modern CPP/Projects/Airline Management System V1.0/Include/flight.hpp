@@ -87,19 +87,22 @@ private:
     std::string crewID;
     std::string name;
     std::string role;
+    int salary;
 
 protected:
-    Crew(std::string&, std::string&);
+    Crew(const std::string&, const std::string&);
 
 public:
     virtual bool assignSalary(double duration) = 0;
     virtual bool viewCrewDetails() = 0;
-    virtual bool editCrewDetails() = 0;
     virtual bool deleteCrew() = 0;
 
     std::string getCrewID() const;
     std::string getCrewName() const;
     std::string getCrewRole() const;
+
+    int getSalary(void) const;
+    bool setSalary(int amount);
 
     bool setUserId(std::string);
 
@@ -108,7 +111,7 @@ public:
 class Pilot : public Crew
 {
 public:
-    Pilot(std::string&);
+    Pilot(const std::string& name, const std::string& role = "Pilot");
     bool assignSalary(double duration);
     bool viewCrewDetails();
     bool editCrewDetails();
@@ -118,7 +121,7 @@ public:
 class FlightAttendant : public Crew
 {
     public:
-    FlightAttendant(std::string&);
+    FlightAttendant(const std::string& name, const std::string& role = "Flight Attendant");
     bool assignSalary(double duration);
     bool viewCrewDetails();
     bool editCrewDetails();
@@ -130,18 +133,15 @@ class Seat
 private:
     std::string seatID;
     std::string seatClass;
-    std::string seatType;
     bool isAvailable;
 
 public:
     bool viewAvailableSeats();
     bool bookSeat();
     bool cancelSeat();
-    // bool editSeat();
 
     std::string getSeatID() const;
     std::string getSeatClass() const;
-    std::string getSeatType() const;
     bool getIsAvailable() const;
     void setIsAvailable(bool available);
 };
@@ -192,6 +192,7 @@ public:
     Payment(std::shared_ptr<PaymentMethod> method);
     bool pay(double amount);
     bool refund();
+    double getAmount() const;
 };
 
 class Reservation
@@ -209,10 +210,9 @@ private:
     std::shared_ptr<Passenger> passenger;
 
 public:
-    Reservation(std::shared_ptr<Flight> flight, std::shared_ptr<Passenger> passenger);
+    Reservation(std::shared_ptr<Flight> flight, std::shared_ptr<Passenger> passenger, std::shared_ptr<PaymentMethod> payment);
     bool bookFlight();
     bool deleteReservation();
-    bool editReservation();
     bool viewReservation();
 
     std::string getReservationID() const;
