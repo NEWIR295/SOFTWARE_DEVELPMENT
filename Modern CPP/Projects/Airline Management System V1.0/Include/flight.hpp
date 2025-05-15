@@ -36,6 +36,7 @@ private:
     int capacity;
     int availableSeats;
     double price;
+    std::string status = "on time";
     std::shared_ptr<Aircraft> aircraft;
     std::vector<std::shared_ptr<Crew>> crewMembers;
     std::vector<std::shared_ptr<Passenger>> passengers;
@@ -68,6 +69,7 @@ public:
     bool addReservation(std::shared_ptr<Reservation> reservation);
     bool removeReservation(std::shared_ptr<Reservation> reservation);
     bool checkAvailability();
+    bool updateFlightStatus(const std::string& newStatus);
 
     std::string getFlightID() const;
     std::string getDeparture() const;
@@ -77,6 +79,7 @@ public:
     int getCapacity() const;
     int getAvailableSeats() const;
     double getPrice() const;
+    std::string getStatus() const { return status; }
     std::string getAircraftID() const;
     std::vector<std::shared_ptr<Crew>> getCrewMembers() const;
     std::vector<std::shared_ptr<Passenger>> getPassengers() const;

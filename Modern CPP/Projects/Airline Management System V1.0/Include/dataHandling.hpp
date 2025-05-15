@@ -60,6 +60,10 @@ public:
     static std::shared_ptr<Flight> loadFlightData(std::string &flightID, const std::string &filename);
     static std::shared_ptr<Reservation> loadReservationData(std::string &reservationID, const std::string &filename);
     static std::shared_ptr<Passenger> loadPassengerData(std::string &passengerID, const std::string &filename);
+    static std::shared_ptr<BookingAgent> loadBookingAgentData(std::string &agentID, const std::string &filename);
+    static std::shared_ptr<Administrator> loadAdministrator(std::string &adminID, const std::string &filename);
+
+
     static std::shared_ptr<Aircraft> loadAircraftData(std::string &aircraftID, const std::string &filename);
     static std::shared_ptr<Crew> loadCrewData(std::string &crewID, const std::string &filename);
 
@@ -71,8 +75,16 @@ public:
 
     // Utility functions
     static bool searchPassenger(std::string &passengerID, const std::string &filename);
-    static bool authenticateUser(std::string &username, std::string &password, const std::string &filename);
+    static std::string authenticateUser(const std::string &username, const std::string &password, const std::string &filename);
     static std::string generateUniqueID(const std::string &filename);
+
+
+    //
+    static void generateFlightReport(const std::string& filename = "flightData.json");
+    static std::vector<std::shared_ptr<Flight>> loadAllFlights(const std::string& filename);
+    static std::vector<std::shared_ptr<Flight>> searchFlights(const std::string& date, 
+                                                             const std::string& destination, 
+                                                             double maxPrice);
 };
 
 #endif

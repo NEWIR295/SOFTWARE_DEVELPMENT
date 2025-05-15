@@ -38,7 +38,6 @@ private:
 
 public:
     User(std::string &, std::string &, std::string &, std::string &, std::string &, std::string &);
-    virtual bool login(void) = 0;
     virtual bool logout(void) = 0;
     virtual bool viewProfile(void) = 0;
     virtual bool editProfile(void);
@@ -72,7 +71,7 @@ class Passenger : public User
 
 public:
     Passenger(std::string &, std::string &, std::string &, std::string &, std::string &, std::string &);
-    bool login(void) override;
+    static std::shared_ptr<Passenger> login(void);
     bool logout(void) override;
     bool viewProfile(void) override;
     bool editProfile(void) override;
@@ -94,7 +93,7 @@ class Administrator : public User
 private:
 public:
     Administrator(std::string &, std::string &, std::string &, std::string &, std::string &, std::string &);
-    bool login(void) override;
+    static std::shared_ptr<Administrator> login(void) ;
     bool logout(void) override;
     bool viewProfile(void) override;
     bool editProfile(void) override;
@@ -121,7 +120,7 @@ class BookingAgent : public User
 {
 public:
     BookingAgent(std::string &, std::string &, std::string &, std::string &, std::string &, std::string &);
-    bool login(void) override;
+    static std::shared_ptr<BookingAgent> login(void) ;
     bool logout(void) override;
     bool viewProfile(void) override;
     bool editProfile(void) override;

@@ -310,6 +310,13 @@ std::vector<std::shared_ptr<Passenger>> Flight::getPassengers() const
     return passengers;
 }
 
+bool Flight::updateFlightStatus(const std::string& newStatus) {
+    status = newStatus;
+    DataHandling::saveData(std::make_shared<Flight>(*this), "flights.json");
+    std::cout << "Flight " << flightID << " status updated to " << newStatus << std::endl;
+    return true;
+}
+
 /*
     Crew class Implementation
 */

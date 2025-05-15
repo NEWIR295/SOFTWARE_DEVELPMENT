@@ -12,6 +12,9 @@ Description:
 #include <iostream>
 #include <stdexcept>
 #include <algorithm>
+#include <functional>
+#include <memory>
+#include <vector>
 
 using json = nlohmann::json;
 
@@ -58,13 +61,13 @@ void to_json(json &j, const Flight &flight)
     // Serialize crew members
     for (const auto &crew : flight.getCrewMembers())
     {
-        j["crewMembers"].push_back(*crew);
+        j["crewMembers"].emplace_back(*crew);
     }
 
     // Serialize passengers
     for (const auto &passenger : flight.getPassengers())
     {
-        j["passengers"].push_back(*passenger);
+        j["passengers"].emplace_back(*passenger);
     }
 }
 
@@ -127,13 +130,34 @@ bool DataHandling::saveData(const std::shared_ptr<Flight> flight, const std::vec
         return false;
     }
 }
+/*
+as you know we have three types of payment make this class act accordingly , check by pointer
 
+*/
 bool DataHandling::saveData(const std::shared_ptr<PaymentMethod> paymentMethod, const std::string &filename)
 {
     try
     {
         json data = readJsonFromFile(filename);
-        data.emplace_back(*paymentMethod);
+
+        // Check the type of payment method using dynamic_pointer_cast
+        if (std::dynamic_pointer_cast<CreditCardMethod>(paymentMethod))
+        {
+            data["creditCardPayments"].emplace_back(*paymentMethod);
+        }
+        else if (std::dynamic_pointer_cast<PaypalMethod>(paymentMethod))
+        {
+            data["paypalPayments"].emplace_back(*paymentMethod);
+        }
+        else if (std::dynamic_pointer_cast<CashMethod>(paymentMethod))
+        {
+            data["CashPayment"].emplace_back(*paymentMethod);
+        }
+        else
+        {
+            throw std::runtime_error("Unknown payment method type");
+        }
+
         writeJsonToFile(data, filename);
         return true;
     }
@@ -149,7 +173,25 @@ bool DataHandling::saveData(const std::shared_ptr<Payment> payment, const std::s
     try
     {
         json data = readJsonFromFile(filename);
-        data.emplace_back(*payment);
+
+        // Check the type of payment using dynamic_pointer_cast
+        if (std::dynamic_pointer_cast<CreditCardMethod>(payment))
+        {
+            data["creditCardPayments"].emplace_back(*payment);
+        }
+        else if (std::dynamic_pointer_cast<PaypalMethod>(payment))
+        {
+            data["paypalPayments"].emplace_back(*payment);
+        }
+        else if (std::dynamic_pointer_cast<CashMethod>(payment))
+        {
+            data["cashPayments"].emplace_back(*payment);
+        }
+        else
+        {
+            throw std::runtime_error("Unknown payment type");
+        }
+
         writeJsonToFile(data, filename);
         return true;
     }
@@ -181,7 +223,21 @@ bool DataHandling::saveData(const std::shared_ptr<Crew> crew, const std::string 
     try
     {
         json data = readJsonFromFile(filename);
-        data.emplace_back(*crew);
+
+        // Check the type of crew using dynamic_pointer_cast
+        if (std::dynamic_pointer_cast<Pilot>(crew))
+        {
+            data["pilots"].emplace_back(*crew);
+        }
+        else if (std::dynamic_pointer_cast<FlightAttendant>(crew))
+        {
+            data["flightAttendants"].emplace_back(*crew);
+        }
+        else
+        {
+            throw std::runtime_error("Unknown crew type");
+        }
+
         writeJsonToFile(data, filename);
         return true;
     }
@@ -192,17 +248,34 @@ bool DataHandling::saveData(const std::shared_ptr<Crew> crew, const std::string 
     }
 }
 
-bool DataHandling::saveData(const std::shared_ptr<User> user, const std::string &filename)
-{
-    try
-    {
+std::string hashPassword(const std::string& password) {
+    std::hash<std::string> hasher;
+    return std::to_string(hasher(password));
+}
+
+bool DataHandling::saveData(const std::shared_ptr<User> user, const std::string& filename) {
+    try {
         json data = readJsonFromFile(filename);
-        data.emplace_back(*user);
+        json userJson = {
+            {"userID", user->getUserID()},
+            {"username", user->getUsername()},
+            {"password", hashPassword(user->getPassword())}, // Hash the password
+            {"email", user->getEmail()},
+            {"phone", user->getPhone()},
+            {"name", user->getName()},
+            {"address", user->getAddress()},
+            {"loyaltyPoints", user->getLoyaltyPoints()}
+        };
+        if (std::dynamic_pointer_cast<Administrator>(user)) {
+            data["administrators"].push_back(userJson);
+        } else if (std::dynamic_pointer_cast<BookingAgent>(user)) {
+            data["bookingAgents"].push_back(userJson);
+        } else if (std::dynamic_pointer_cast<Passenger>(user)) {
+            data["passengers"].push_back(userJson);
+        }
         writeJsonToFile(data, filename);
         return true;
-    }
-    catch (const std::exception &e)
-    {
+    } catch (const std::exception& e) {
         std::cerr << "Error saving user data: " << e.what() << std::endl;
         return false;
     }
@@ -499,6 +572,44 @@ std::shared_ptr<Passenger> DataHandling::loadPassengerData(std::string &passenge
     return nullptr;
 }
 
+std::shared_ptr<BookingAgent> DataHandling::loadBookingAgentData(std::string &agentID, const std::string &filename){
+    try
+    {
+        json data = readJsonFromFile(filename);
+        for (const auto &item : data)
+        {
+            if (item["userID"] == agentID)
+            {
+                return std::make_shared<BookingAgent>(item);
+            }
+        }
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Error loading Booking Agent data: " << e.what() << std::endl;
+    }
+    return nullptr;
+}
+
+std::shared_ptr<Administrator> DataHandling::loadAdministrator(std::string &adminID, const std::string &filename){
+    try
+    {
+        json data = readJsonFromFile(filename);
+        for (const auto &item : data)
+        {
+            if (item["userID"] == adminID)
+            {
+                return std::make_shared<Administrator>(item);
+            }
+        }
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Error loading Administrator data: " << e.what() << std::endl;
+    }
+    return nullptr;
+}
+
 std::shared_ptr<Aircraft> DataHandling::loadAircraftData(std::string &aircraftID, const std::string &filename)
 {
     try
@@ -636,24 +747,19 @@ bool DataHandling::searchPassenger(std::string &passengerID, const std::string &
     return false;
 }
 
-bool DataHandling::authenticateUser(std::string &username, std::string &password, const std::string &filename)
-{
-    try
-    {
+
+std::string DataHandling::authenticateUser(const std::string& username, const std::string& password, const std::string& filename) {
+    try {
         json data = readJsonFromFile(filename);
-        for (const auto &item : data)
-        {
-            if (item["username"] == username && item["password"] == password)
-            {
-                return true;
+        for (const auto& item : data) {
+            if (item["username"] == username && item["password"] == hashPassword(password)) {
+                return item["userID"].get<std::string>(); // Return userID if credentials match
             }
         }
-    }
-    catch (const std::exception &e)
-    {
+    } catch (const std::exception& e) {
         std::cerr << "Error authenticating user: " << e.what() << std::endl;
     }
-    return false;
+    return ""; // Return empty string if authentication fails
 }
 
 std::string DataHandling::generateUniqueID(const std::string &filename)
@@ -668,4 +774,51 @@ std::string DataHandling::generateUniqueID(const std::string &filename)
         std::cerr << "Error generating unique ID: " << e.what() << std::endl;
     }
     return "ID_1";
+}
+
+void DataHandling::generateFlightReport(const std::string& filename) {
+    auto allFlights = loadAllFlights(filename);
+    std::cout << "Flight Report:" << std::endl;
+    for (const auto& flight : allFlights) {
+        flight->viewFlightDetails(); // Assumes this method exists
+        std::cout << "Status: " << flight->getStatus() << std::endl;
+        std::cout << "Number of passengers: " << flight->getPassengers().size() << std::endl;
+        std::cout << "-------------------------" << std::endl;
+    }
+}
+
+std::vector<std::shared_ptr<Flight>> DataHandling::loadAllFlights(const std::string& filename) {
+    std::vector<std::shared_ptr<Flight>> flights;
+    try {
+        json data = readJsonFromFile(filename); // Existing function to read JSON
+        for (const auto& item : data) {
+            flights.push_back(std::make_shared<Flight>(item)); // Assumes Flight has a json constructor
+        }
+    } catch (const std::exception& e) {
+        std::cerr << "Error loading all flights: " << e.what() << std::endl;
+    }
+    return flights;
+}
+
+std::vector<std::shared_ptr<Flight>> DataHandling::searchFlights(const std::string& date, 
+                                                                const std::string& destination, 
+                                                                double maxPrice) {
+    auto allFlights = loadAllFlights("flights.json");
+    std::vector<std::shared_ptr<Flight>> result;
+    for (const auto& flight : allFlights) {
+        bool matches = true;
+        if (!date.empty() && flight->getDate() != date) {
+            matches = false;
+        }
+        if (!destination.empty() && flight->getArrival() != destination) {
+            matches = false;
+        }
+        if (maxPrice >= 0 && flight->getPrice() > maxPrice) {
+            matches = false;
+        }
+        if (matches) {
+            result.push_back(flight);
+        }
+    }
+    return result;
 }

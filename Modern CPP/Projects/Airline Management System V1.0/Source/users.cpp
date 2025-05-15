@@ -227,24 +227,26 @@ Passenger::Passenger(std::string &username, std::string &password, std::string &
     DataHandling::saveData(std::make_shared<Passenger>(*this), "passengers.json");
 }
 
-bool Passenger::login(void)
-{
+
+std::shared_ptr<Passenger> Passenger::login(void) {
     std::string username, password;
     std::cout << "Enter username: ";
     std::cin >> username;
     std::cout << "Enter password: ";
     std::cin >> password;
 
-    if (DataHandling::authenticateUser(username, password, "passengers.json"))
-    {
-        std::cout << "Login successful!" << std::endl;
-        return true;
+    // Authenticate and get userID
+    std::string userID = DataHandling::authenticateUser(username, password, "passengers.json");
+    if (!userID.empty()) {
+        // Load passenger data using userID
+        std::shared_ptr<Passenger> passenger = DataHandling::loadPassengerData(userID, "passengers.json");
+        if (passenger) {
+            std::cout << "Login successful!" << std::endl;
+            return passenger;
+        }
     }
-    else
-    {
-        std::cerr << "Login failed!" << std::endl;
-        return false;
-    }
+    std::cerr << "Login failed!" << std::endl;
+    return nullptr;
 }
 
 bool Passenger::logout(void)
@@ -287,6 +289,7 @@ bool Passenger::bookFlight(void)
         if (reservation->bookFlight())
         {
             std::cout << "Flight booked successfully!" << std::endl;
+            setLoyaltyPoints(10); // Add loyalty points for booking
             return true;
         }
         else
@@ -394,7 +397,7 @@ BookingAgent::BookingAgent(std::string &username, std::string &password, std::st
     DataHandling::saveData(std::make_shared<BookingAgent>(*this), "bookingAgent.json");
 }
 
-bool BookingAgent::login(void)
+std::shared_ptr<BookingAgent> BookingAgent::login(void)
 {
     std::string username, password;
     std::cout << "Enter username: ";
@@ -402,15 +405,20 @@ bool BookingAgent::login(void)
     std::cout << "Enter password: ";
     std::cin >> password;
 
-    if (DataHandling::authenticateUser(username, password, "bookingAgent.json"))
+    std::string userID = DataHandling::authenticateUser(username, password, "bookingAgent.json");
+    if (!userID.empty() )
     {
-        std::cout << "Login successful!" << std::endl;
-        return true;
+    // Load booking agent data using userID
+    std::shared_ptr<BookingAgent> bookingAgent = DataHandling::loadBookingAgentData(userID, "bookingAgent.json");
+       if(bookingAgent){
+         std::cout << "Login successful!" << std::endl;
+        return bookingAgent;
+    }
     }
     else
     {
         std::cerr << "Login failed!" << std::endl;
-        return false;
+        return nullptr;
     }
 }
 bool BookingAgent::logout(void)
@@ -541,23 +549,27 @@ Administrator::Administrator(std::string &username, std::string &password, std::
     DataHandling::saveData(std::make_shared<Administrator>(*this), "admin.json");
 }
 
-bool Administrator::login(void)
+std::shared_ptr<Administrator> Administrator::login(void)
 {
     std::string username, password;
     std::cout << "Enter username: ";
     std::cin >> username;
     std::cout << "Enter password: ";
     std::cin >> password;
+    std::string userID = DataHandling::authenticateUser(username, password, "admin.json");
 
-    if (DataHandling::authenticateUser(username, password, "admin.json"))
+    if (!userID.empty())
     {
-        std::cout << "Login successful!" << std::endl;
-        return true;
+        std::shared_ptr<Administrator> admin = DataHandling::loadAdministrator(userID, "admin.json");
+        if(admin){
+            std::cout << "Login successful!" << std::endl;
+        return admin;
+    }
     }
     else
     {
         std::cerr << "Login failed!" << std::endl;
-        return false;
+        return nullptr;
     }
 }
 bool Administrator::logout(void)
