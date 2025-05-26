@@ -21,6 +21,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 #set the sources to be compiled 
 set(SOURCES 
     ./Source/Application/main.cpp
+    ./Source/Application/airlineSystem.cpp
 
     #include the header files for the user modules
     ./Source/UsersModule/user.cpp
