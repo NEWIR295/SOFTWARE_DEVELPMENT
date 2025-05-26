@@ -168,6 +168,18 @@ std::string flightDataHandling::generateFlightUniqueId(void) const
     return ""; // Return an empty string if no unique ID could be generated
 }
 
+double flightDataHandling::getFlightPrice(const std::string &flightID) const
+{
+    for (const auto &flight : flights)
+    {
+        if (flight.getFlightID() == flightID)
+        {
+            return flight.getPrice(); // Return the price of the flight if found
+        }
+    }
+    return 0.0; // Return 0.0 if the flight ID is not found
+}
+
 /*
     Aircraft data handling methods
     These methods manage the aircraft data, including loading, saving, and manipulating aircraft records.
@@ -303,4 +315,21 @@ std::string flightDataHandling::generateAircraftUniqueId(void) const
             return oss.str();
     }
     return ""; // Return an empty string if no unique ID could be generated
+}
+
+/*
+
+*/
+int flightDataHandling::getAircraftCapacityByID(const std::string &aircraftID) const
+{
+    auto it = std::find_if(aircrafts.begin(), aircrafts.end(),
+                           [&](const Aircraft &aircraft)
+                           {
+                               return aircraft.getAircraftID() == aircraftID; // Find the aircraft by its ID
+                           });
+    if (it != aircrafts.end())
+    {
+        return it->getCapacity(); // Return the capacity of the aircraft if found
+    }
+    return 0; // Return 0 if the aircraft ID is not found
 }

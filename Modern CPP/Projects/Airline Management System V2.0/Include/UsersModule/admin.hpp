@@ -15,7 +15,7 @@ class Admin : public User
 {
 public:
     Admin(const std::string userID, const std::string username, const std::string passwordHashed, const Role role = Role::Admin);
-    void displayUserInfo() const override;
+    void displayUserMenu() override;
 };
 
 #endif // ADMIN_HPP

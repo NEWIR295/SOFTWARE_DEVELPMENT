@@ -232,3 +232,18 @@ std::string AuthenticationModule::hashPassword(const std::string &password)
     std::hash<std::string> hasher;
     return std::to_string(hasher(password));
 }
+
+std::shared_ptr<User> AuthenticationModule::getUserById(const std::string &userID) const
+{
+    auto it = std::find_if(users.begin(), users.end(),
+                           [&](const std::shared_ptr<User> &user)
+                           {
+                               return user->getUserID() == userID;
+                           });
+
+    if (it != users.end())
+    {
+        return *it; // Return the user if found
+    }
+    return nullptr; // Return nullptr if no matching user is found
+}

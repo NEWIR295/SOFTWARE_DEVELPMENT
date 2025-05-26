@@ -14,9 +14,9 @@ Description:
 
 #include "reservation.hpp"
 #include "seat.hpp"
+#include "payment.hpp"
 #include "../Flight_AircraftModule/flights.hpp"
 #include "../UsersModule/passengers.hpp"
-#include "../Include/BookingModule/payment.hpp"
 #include <vector>
 
 class BookingHandler
