@@ -6,7 +6,11 @@ Description:
     Implementation of the DataHandling class for managing data persistence.
 */
 
+#include "../Include/aircraft.hpp"
+#include "../Include/users.hpp"
+#include "../Include/flight.hpp"
 #include "../Include/dataHandling.hpp"
+
 #include <nlohmann/json.hpp>
 #include <fstream>
 #include <iostream>
@@ -15,6 +19,8 @@ Description:
 #include <functional>
 #include <memory>
 #include <vector>
+
+
 
 using json = nlohmann::json;
 

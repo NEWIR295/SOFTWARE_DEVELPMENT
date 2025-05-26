@@ -20,9 +20,19 @@ Description:
 
 #include <memory>
 
-#include "aircraft.hpp"
-#include "users.hpp"
-#include "flight.hpp"
+class User;
+class Passenger;
+class BookingAgent;
+class Administrator;
+class Flight;
+class Passenger;
+class PaymentMethod;
+class Aircraft;
+class Crew;
+class Reservation;
+class Maintenance;
+class Seat;
+class Payment;
 
 class DataHandling
 {

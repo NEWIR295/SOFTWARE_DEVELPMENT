@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/Output.dir/Source/Application/main.cpp.o"
+  "CMakeFiles/Output.dir/Source/Application/main.cpp.o.d"
+  "CMakeFiles/Output.dir/Source/BookingModule/bookingHandler.cpp.o"
+  "CMakeFiles/Output.dir/Source/BookingModule/bookingHandler.cpp.o.d"
+  "CMakeFiles/Output.dir/Source/BookingModule/payment.cpp.o"
+  "CMakeFiles/Output.dir/Source/BookingModule/payment.cpp.o.d"
+  "CMakeFiles/Output.dir/Source/BookingModule/reservation.cpp.o"
+  "CMakeFiles/Output.dir/Source/BookingModule/reservation.cpp.o.d"
+  "CMakeFiles/Output.dir/Source/BookingModule/seat.cpp.o"
+  "CMakeFiles/Output.dir/Source/BookingModule/seat.cpp.o.d"
+  "CMakeFiles/Output.dir/Source/CheckInModule/boardingPass.cpp.o"
+  "CMakeFiles/Output.dir/Source/CheckInModule/boardingPass.cpp.o.d"
+  "CMakeFiles/Output.dir/Source/CheckInModule/checkInHandling.cpp.o"
+  "CMakeFiles/Output.dir/Source/CheckInModule/checkInHandling.cpp.o.d"
+  "CMakeFiles/Output.dir/Source/Flight_AircraftModule/aircrafts.cpp.o"
+  "CMakeFiles/Output.dir/Source/Flight_AircraftModule/aircrafts.cpp.o.d"
+  "CMakeFiles/Output.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.o"
+  "CMakeFiles/Output.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.o.d"
+  "CMakeFiles/Output.dir/Source/Flight_AircraftModule/flights.cpp.o"
+  "CMakeFiles/Output.dir/Source/Flight_AircraftModule/flights.cpp.o.d"
+  "CMakeFiles/Output.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.o"
+  "CMakeFiles/Output.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.o.d"
+  "CMakeFiles/Output.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.o"
+  "CMakeFiles/Output.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.o.d"
+  "CMakeFiles/Output.dir/Source/UsersModule/AuthenticationModule.cpp.o"
+  "CMakeFiles/Output.dir/Source/UsersModule/AuthenticationModule.cpp.o.d"
+  "CMakeFiles/Output.dir/Source/UsersModule/admin.cpp.o"
+  "CMakeFiles/Output.dir/Source/UsersModule/admin.cpp.o.d"
+  "CMakeFiles/Output.dir/Source/UsersModule/bookingAgent.cpp.o"
+  "CMakeFiles/Output.dir/Source/UsersModule/bookingAgent.cpp.o.d"
+  "CMakeFiles/Output.dir/Source/UsersModule/passengers.cpp.o"
+  "CMakeFiles/Output.dir/Source/UsersModule/passengers.cpp.o.d"
+  "CMakeFiles/Output.dir/Source/UsersModule/user.cpp.o"
+  "CMakeFiles/Output.dir/Source/UsersModule/user.cpp.o.d"
+  "Output"
+  "Output.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/Output.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

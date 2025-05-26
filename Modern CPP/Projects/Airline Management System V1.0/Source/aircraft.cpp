@@ -28,7 +28,7 @@ bool Aircraft::addMaintenanceRecord(Maintenance record)
     // Add the Maintenance record to the aircraft's records
     MaintenanceRecords.push_back(record);
     // Save the updated aircraft details to the file
-    DataHandling::saveData(std::make_shared<Aircraft>(*this), "aircraft.json");
+    DataHandling::saveData(std::make_shared<Aircraft>(*this), "maintenanceLog.json");
     return true;
 }
 bool Aircraft::viewMaintenanceRecords() const

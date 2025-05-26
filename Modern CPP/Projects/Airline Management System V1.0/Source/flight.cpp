@@ -5,6 +5,9 @@ File: flight.cpp
 Description:
     o
 */
+#include "../Include/aircraft.hpp"
+#include "../Include/users.hpp"
+#include "../Include/dataHandling.hpp"
 #include "../Include/flight.hpp"
 /*
     Flight class implementation

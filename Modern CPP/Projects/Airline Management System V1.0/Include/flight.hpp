@@ -17,74 +17,18 @@ Description:
 #include <memory>
 #include <map>
 
-#include "aircraft.hpp"
-#include "users.hpp"
-#include "dataHandling.hpp"
+class Flight;
+class Passenger;
+class PaymentMethod;
+class Aircraft;
+class Crew;
+class Reservation;
 
 std::map<std::string, double> crewSalaryPerHourIn$ = {
     {"Pilot", 96.00},
     {"Flight Attendant", 28.0}};
 
-class Flight
-{
-private:
-    std::string flightID;
-    std::string departure;
-    std::string arrival;
-    std::string date;
-    int duration;
-    int capacity;
-    int availableSeats;
-    double price;
-    std::string status = "on time";
-    std::shared_ptr<Aircraft> aircraft;
-    std::vector<std::shared_ptr<Crew>> crewMembers;
-    std::vector<std::shared_ptr<Passenger>> passengers;
-    std::vector<std::shared_ptr<Crew>> crew;
-    std::vector<std::shared_ptr<Reservation>> reservations;
-
-public:
-    Flight(std::string departure, std::string arrival, std::string date, int duration, double price,
-           std::shared_ptr<Aircraft> aircraft);
-
-    bool addCrewMember(std::shared_ptr<Crew> crewMember);
-    bool removeCrewMember(std::shared_ptr<Crew> crewMember);
-
-    bool addPassenger(std::shared_ptr<Passenger> passenger);
-    bool removePassenger(std::shared_ptr<Passenger> passenger);
-
-    bool assignAircraft(std::shared_ptr<Aircraft> aircraft);
-
-    double getFlightDuration() const;
-
-    bool editFlightDetails();
-    bool cancelFlight();
-
-    bool viewAvailableSeats();
-    bool viewCrewMembers();
-    bool viewPassengers();
-    bool viewFlightHistory();
-    bool viewFlightDetails();
-
-    bool addReservation(std::shared_ptr<Reservation> reservation);
-    bool removeReservation(std::shared_ptr<Reservation> reservation);
-    bool checkAvailability();
-    bool updateFlightStatus(const std::string& newStatus);
-
-    std::string getFlightID() const;
-    std::string getDeparture() const;
-    std::string getArrival() const;
-    std::string getDate() const;
-    int getDuration() const;
-    int getCapacity() const;
-    int getAvailableSeats() const;
-    double getPrice() const;
-    std::string getStatus() const { return status; }
-    std::string getAircraftID() const;
-    std::vector<std::shared_ptr<Crew>> getCrewMembers() const;
-    std::vector<std::shared_ptr<Passenger>> getPassengers() const;
-};
-
+    
 // المفروض يقري من الفايل الكرو الموجودين
 class Crew
 {
@@ -228,4 +172,63 @@ public:
     bool checkIn();
 };
 
+class Flight
+{
+private:
+    std::string flightID;
+    std::string departure;
+    std::string arrival;
+    std::string date;
+    int duration;
+    int capacity;
+    int availableSeats;
+    double price;
+    std::string status = "on time";
+    std::shared_ptr<Aircraft> aircraft;
+    std::vector<std::shared_ptr<Crew>> crewMembers;
+    std::vector<std::shared_ptr<Passenger>> passengers;
+    std::vector<std::shared_ptr<Crew>> crew;
+    std::vector<std::shared_ptr<Reservation>> reservations;
+
+public:
+    Flight(std::string departure, std::string arrival, std::string date, int duration, double price,
+           std::shared_ptr<Aircraft> aircraft);
+
+    bool addCrewMember(std::shared_ptr<Crew> crewMember);
+    bool removeCrewMember(std::shared_ptr<Crew> crewMember);
+
+    bool addPassenger(std::shared_ptr<Passenger> passenger);
+    bool removePassenger(std::shared_ptr<Passenger> passenger);
+
+    bool assignAircraft(std::shared_ptr<Aircraft> aircraft);
+
+    double getFlightDuration() const;
+
+    bool editFlightDetails();
+    bool cancelFlight();
+
+    bool viewAvailableSeats();
+    bool viewCrewMembers();
+    bool viewPassengers();
+    bool viewFlightHistory();
+    bool viewFlightDetails();
+
+    bool addReservation(std::shared_ptr<Reservation> reservation);
+    bool removeReservation(std::shared_ptr<Reservation> reservation);
+    bool checkAvailability();
+    bool updateFlightStatus(const std::string& newStatus);
+
+    std::string getFlightID() const;
+    std::string getDeparture() const;
+    std::string getArrival() const;
+    std::string getDate() const;
+    int getDuration() const;
+    int getCapacity() const;
+    int getAvailableSeats() const;
+    double getPrice() const;
+    std::string getStatus() const { return status; }
+    std::string getAircraftID() const;
+    std::vector<std::shared_ptr<Crew>> getCrewMembers() const;
+    std::vector<std::shared_ptr<Passenger>> getPassengers() const;
+};
 #endif

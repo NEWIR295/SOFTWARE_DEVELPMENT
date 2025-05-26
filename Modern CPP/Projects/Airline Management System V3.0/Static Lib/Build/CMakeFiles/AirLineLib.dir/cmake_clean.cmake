@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.o"
+  "CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.o.d"
+  "CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.o"
+  "CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.o.d"
+  "CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.o"
+  "CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.o.d"
+  "CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.o"
+  "CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.o.d"
+  "CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.o"
+  "CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.o.d"
+  "CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.o"
+  "CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.o.d"
+  "CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.o"
+  "CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.o.d"
+  "CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.o"
+  "CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.o.d"
+  "CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.o"
+  "CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.o.d"
+  "CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.o"
+  "CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.o.d"
+  "CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.o"
+  "CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.o.d"
+  "CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.o"
+  "CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.o.d"
+  "CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.o"
+  "CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.o.d"
+  "CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.o"
+  "CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.o.d"
+  "CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.o"
+  "CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.o.d"
+  "CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.o"
+  "CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.o.d"
+  "libAirLineLib.a"
+  "libAirLineLib.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/AirLineLib.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
