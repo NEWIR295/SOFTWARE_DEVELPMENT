@@ -1,8 +1,8 @@
 CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.o: \
- /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/CheckInModule/checkInHandling.cpp \
+ /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/CheckInModule/checkInHandling.cpp \
  /usr/include/stdc-predef.h \
- /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/CheckInModule/../../Include/CheckInModule/checkInHandling.hpp \
- /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/CheckInModule/../../Include/CheckInModule/../BookingModule/reservation.hpp \
+ /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/CheckInModule/../../Include/CheckInModule/checkInHandling.hpp \
+ /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/CheckInModule/../../Include/CheckInModule/../BookingModule/reservation.hpp \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -117,7 +117,7 @@ CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.o: \
  /usr/include/c++/13/bits/memory_resource.h /usr/include/c++/13/cstddef \
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
- /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/CheckInModule/../../Include/CheckInModule/boardingPass.hpp \
+ /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/CheckInModule/../../Include/CheckInModule/boardingPass.hpp \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \

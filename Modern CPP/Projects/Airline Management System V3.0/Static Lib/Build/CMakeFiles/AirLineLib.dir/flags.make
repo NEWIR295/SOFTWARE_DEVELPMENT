@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/./Include"
+CXX_INCLUDES = -I"/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/./Include"
 
 CXX_FLAGS = -std=gnu++17
 

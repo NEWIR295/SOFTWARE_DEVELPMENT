@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0"
+CMAKE_SOURCE_DIR = "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build"
+CMAKE_BINARY_DIR = "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/AirLineLib.dir/depend.make
@@ -70,228 +70,228 @@ include CMakeFiles/AirLineLib.dir/progress.make
 include CMakeFiles/AirLineLib.dir/flags.make
 
 CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.o: CMakeFiles/AirLineLib.dir/flags.make
-CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/UsersModule/user.cpp
+CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/UsersModule/user.cpp
 CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.o: CMakeFiles/AirLineLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/UsersModule/user.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/UsersModule/user.cpp"
 
 CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/UsersModule/user.cpp" > CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/UsersModule/user.cpp" > CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.i
 
 CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/UsersModule/user.cpp" -o CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/UsersModule/user.cpp" -o CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.s
 
 CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.o: CMakeFiles/AirLineLib.dir/flags.make
-CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/UsersModule/admin.cpp
+CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/UsersModule/admin.cpp
 CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.o: CMakeFiles/AirLineLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/UsersModule/admin.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/UsersModule/admin.cpp"
 
 CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/UsersModule/admin.cpp" > CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/UsersModule/admin.cpp" > CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.i
 
 CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/UsersModule/admin.cpp" -o CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/UsersModule/admin.cpp" -o CMakeFiles/AirLineLib.dir/Source/UsersModule/admin.cpp.s
 
 CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.o: CMakeFiles/AirLineLib.dir/flags.make
-CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/UsersModule/bookingAgent.cpp
+CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/UsersModule/bookingAgent.cpp
 CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.o: CMakeFiles/AirLineLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/UsersModule/bookingAgent.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/UsersModule/bookingAgent.cpp"
 
 CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/UsersModule/bookingAgent.cpp" > CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/UsersModule/bookingAgent.cpp" > CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.i
 
 CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/UsersModule/bookingAgent.cpp" -o CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/UsersModule/bookingAgent.cpp" -o CMakeFiles/AirLineLib.dir/Source/UsersModule/bookingAgent.cpp.s
 
 CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.o: CMakeFiles/AirLineLib.dir/flags.make
-CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/UsersModule/passengers.cpp
+CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/UsersModule/passengers.cpp
 CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.o: CMakeFiles/AirLineLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/UsersModule/passengers.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/UsersModule/passengers.cpp"
 
 CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/UsersModule/passengers.cpp" > CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/UsersModule/passengers.cpp" > CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.i
 
 CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/UsersModule/passengers.cpp" -o CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/UsersModule/passengers.cpp" -o CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.s
 
 CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.o: CMakeFiles/AirLineLib.dir/flags.make
-CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/UsersModule/AuthenticationModule.cpp
+CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/UsersModule/AuthenticationModule.cpp
 CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.o: CMakeFiles/AirLineLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/UsersModule/AuthenticationModule.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/UsersModule/AuthenticationModule.cpp"
 
 CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/UsersModule/AuthenticationModule.cpp" > CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/UsersModule/AuthenticationModule.cpp" > CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.i
 
 CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/UsersModule/AuthenticationModule.cpp" -o CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/UsersModule/AuthenticationModule.cpp" -o CMakeFiles/AirLineLib.dir/Source/UsersModule/AuthenticationModule.cpp.s
 
 CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.o: CMakeFiles/AirLineLib.dir/flags.make
-CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/Flight_AircraftModule/aircrafts.cpp
+CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/Flight_AircraftModule/aircrafts.cpp
 CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.o: CMakeFiles/AirLineLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/Flight_AircraftModule/aircrafts.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/Flight_AircraftModule/aircrafts.cpp"
 
 CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/Flight_AircraftModule/aircrafts.cpp" > CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/Flight_AircraftModule/aircrafts.cpp" > CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.i
 
 CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/Flight_AircraftModule/aircrafts.cpp" -o CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/Flight_AircraftModule/aircrafts.cpp" -o CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/aircrafts.cpp.s
 
 CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.o: CMakeFiles/AirLineLib.dir/flags.make
-CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/Flight_AircraftModule/flights.cpp
+CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/Flight_AircraftModule/flights.cpp
 CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.o: CMakeFiles/AirLineLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/Flight_AircraftModule/flights.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/Flight_AircraftModule/flights.cpp"
 
 CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/Flight_AircraftModule/flights.cpp" > CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/Flight_AircraftModule/flights.cpp" > CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.i
 
 CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/Flight_AircraftModule/flights.cpp" -o CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/Flight_AircraftModule/flights.cpp" -o CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flights.cpp.s
 
 CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.o: CMakeFiles/AirLineLib.dir/flags.make
-CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/Flight_AircraftModule/flightDataHandling.cpp
+CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/Flight_AircraftModule/flightDataHandling.cpp
 CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.o: CMakeFiles/AirLineLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/Flight_AircraftModule/flightDataHandling.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/Flight_AircraftModule/flightDataHandling.cpp"
 
 CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/Flight_AircraftModule/flightDataHandling.cpp" > CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/Flight_AircraftModule/flightDataHandling.cpp" > CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.i
 
 CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/Flight_AircraftModule/flightDataHandling.cpp" -o CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/Flight_AircraftModule/flightDataHandling.cpp" -o CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.s
 
 CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.o: CMakeFiles/AirLineLib.dir/flags.make
-CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/Flight_AircraftModule/maintenanceHandler.cpp
+CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/Flight_AircraftModule/maintenanceHandler.cpp
 CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.o: CMakeFiles/AirLineLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/Flight_AircraftModule/maintenanceHandler.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/Flight_AircraftModule/maintenanceHandler.cpp"
 
 CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/Flight_AircraftModule/maintenanceHandler.cpp" > CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/Flight_AircraftModule/maintenanceHandler.cpp" > CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.i
 
 CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/Flight_AircraftModule/maintenanceHandler.cpp" -o CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/Flight_AircraftModule/maintenanceHandler.cpp" -o CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceHandler.cpp.s
 
 CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.o: CMakeFiles/AirLineLib.dir/flags.make
-CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/Flight_AircraftModule/maintenanceLog.cpp
+CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/Flight_AircraftModule/maintenanceLog.cpp
 CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.o: CMakeFiles/AirLineLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/Flight_AircraftModule/maintenanceLog.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/Flight_AircraftModule/maintenanceLog.cpp"
 
 CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/Flight_AircraftModule/maintenanceLog.cpp" > CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/Flight_AircraftModule/maintenanceLog.cpp" > CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.i
 
 CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/Flight_AircraftModule/maintenanceLog.cpp" -o CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/Flight_AircraftModule/maintenanceLog.cpp" -o CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/maintenanceLog.cpp.s
 
 CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.o: CMakeFiles/AirLineLib.dir/flags.make
-CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/BookingModule/seat.cpp
+CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/BookingModule/seat.cpp
 CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.o: CMakeFiles/AirLineLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/BookingModule/seat.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/BookingModule/seat.cpp"
 
 CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/BookingModule/seat.cpp" > CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/BookingModule/seat.cpp" > CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.i
 
 CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/BookingModule/seat.cpp" -o CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/BookingModule/seat.cpp" -o CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.s
 
 CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.o: CMakeFiles/AirLineLib.dir/flags.make
-CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/BookingModule/bookingHandler.cpp
+CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/BookingModule/bookingHandler.cpp
 CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.o: CMakeFiles/AirLineLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/BookingModule/bookingHandler.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/BookingModule/bookingHandler.cpp"
 
 CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/BookingModule/bookingHandler.cpp" > CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/BookingModule/bookingHandler.cpp" > CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.i
 
 CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/BookingModule/bookingHandler.cpp" -o CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/BookingModule/bookingHandler.cpp" -o CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.s
 
 CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.o: CMakeFiles/AirLineLib.dir/flags.make
-CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/BookingModule/reservation.cpp
+CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/BookingModule/reservation.cpp
 CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.o: CMakeFiles/AirLineLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/BookingModule/reservation.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/BookingModule/reservation.cpp"
 
 CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/BookingModule/reservation.cpp" > CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/BookingModule/reservation.cpp" > CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.i
 
 CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/BookingModule/reservation.cpp" -o CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/BookingModule/reservation.cpp" -o CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.s
 
 CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.o: CMakeFiles/AirLineLib.dir/flags.make
-CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/BookingModule/payment.cpp
+CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/BookingModule/payment.cpp
 CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.o: CMakeFiles/AirLineLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/BookingModule/payment.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/BookingModule/payment.cpp"
 
 CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/BookingModule/payment.cpp" > CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/BookingModule/payment.cpp" > CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.i
 
 CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/BookingModule/payment.cpp" -o CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/BookingModule/payment.cpp" -o CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.s
 
 CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.o: CMakeFiles/AirLineLib.dir/flags.make
-CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/CheckInModule/boardingPass.cpp
+CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/CheckInModule/boardingPass.cpp
 CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.o: CMakeFiles/AirLineLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/CheckInModule/boardingPass.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/CheckInModule/boardingPass.cpp"
 
 CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/CheckInModule/boardingPass.cpp" > CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/CheckInModule/boardingPass.cpp" > CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.i
 
 CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/CheckInModule/boardingPass.cpp" -o CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/CheckInModule/boardingPass.cpp" -o CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp.s
 
 CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.o: CMakeFiles/AirLineLib.dir/flags.make
-CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/CheckInModule/checkInHandling.cpp
+CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.o: /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/CheckInModule/checkInHandling.cpp
 CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.o: CMakeFiles/AirLineLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/CheckInModule/checkInHandling.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.o -MF CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.o.d -o CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.o -c "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/CheckInModule/checkInHandling.cpp"
 
 CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/CheckInModule/checkInHandling.cpp" > CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/CheckInModule/checkInHandling.cpp" > CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.i
 
 CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Source/CheckInModule/checkInHandling.cpp" -o CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Source/CheckInModule/checkInHandling.cpp" -o CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.s
 
 # Object files for target AirLineLib
 AirLineLib_OBJECTS = \
@@ -333,7 +333,7 @@ libAirLineLib.a: CMakeFiles/AirLineLib.dir/Source/CheckInModule/boardingPass.cpp
 libAirLineLib.a: CMakeFiles/AirLineLib.dir/Source/CheckInModule/checkInHandling.cpp.o
 libAirLineLib.a: CMakeFiles/AirLineLib.dir/build.make
 libAirLineLib.a: CMakeFiles/AirLineLib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX static library libAirLineLib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX static library libAirLineLib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/AirLineLib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AirLineLib.dir/link.txt --verbose=$(VERBOSE)
 
@@ -346,6 +346,6 @@ CMakeFiles/AirLineLib.dir/clean:
 .PHONY : CMakeFiles/AirLineLib.dir/clean
 
 CMakeFiles/AirLineLib.dir/depend:
-	cd "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0" "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0" "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build" "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build" "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Build/CMakeFiles/AirLineLib.dir/DependInfo.cmake" "--color=$(COLOR)"
+	cd "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib" "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib" "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build" "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build" "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/Build/CMakeFiles/AirLineLib.dir/DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : CMakeFiles/AirLineLib.dir/depend
 

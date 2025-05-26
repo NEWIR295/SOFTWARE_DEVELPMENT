@@ -15,7 +15,7 @@ class BookingAgent : public User
 {
 public:
     BookingAgent(const std::string userID, const std::string username, const std::string passwordHashed, const Role role = Role::BookingAgent);
-    void displayUserInfo() const override;
+    void displayUserMenu() override;
 };
 
 #endif // BookingAgent_HPP

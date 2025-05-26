@@ -1,5 +1,5 @@
 CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.o: \
- /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/Flight_AircraftModule/flightDataHandling.cpp \
+ /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/Flight_AircraftModule/flightDataHandling.cpp \
  /usr/include/stdc-predef.h /usr/include/nlohmann/json.hpp \
  /usr/include/c++/13/algorithm /usr/include/c++/13/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -290,6 +290,6 @@ CMakeFiles/AirLineLib.dir/Source/Flight_AircraftModule/flightDataHandling.cpp.o:
  /usr/include/c++/13/bits/fstream.tcc /usr/include/c++/13/set \
  /usr/include/c++/13/bits/stl_set.h \
  /usr/include/c++/13/bits/stl_multiset.h \
- /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/Flight_AircraftModule/../../Include/Flight_AircraftModule/flightDataHandling.hpp \
- /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/Flight_AircraftModule/../../Include/Flight_AircraftModule/flights.hpp \
- /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/Flight_AircraftModule/../../Include/Flight_AircraftModule/aircrafts.hpp
+ /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/Flight_AircraftModule/../../Include/Flight_AircraftModule/flightDataHandling.hpp \
+ /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/Flight_AircraftModule/../../Include/Flight_AircraftModule/flights.hpp \
+ /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/Flight_AircraftModule/../../Include/Flight_AircraftModule/aircrafts.hpp

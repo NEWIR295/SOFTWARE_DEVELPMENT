@@ -1,5 +1,5 @@
 CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.o: \
- /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/BookingModule/seat.cpp \
+ /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/BookingModule/seat.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/13/iostream \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -150,7 +150,7 @@ CMakeFiles/AirLineLib.dir/Source/BookingModule/seat.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/BookingModule/../../Include/BookingModule/seat.hpp \
+ /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/BookingModule/../../Include/BookingModule/seat.hpp \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \

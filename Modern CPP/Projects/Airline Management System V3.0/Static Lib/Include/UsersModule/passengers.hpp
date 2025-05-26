@@ -10,19 +10,21 @@ Description:
 #define Passenger_HPP
 
 #include "user.hpp"
+#include <memory>
 
-class Passenger : public User
+class Passenger : public User, public std::enable_shared_from_this<Passenger>
 {
 private:
     int loyaltyPoints; // Loyalty points for the passenger
 public:
     Passenger(const std::string userID, const std::string username, const std::string passwordHashed, const Role role = Role::Passenger);
-    void displayUserInfo() const override;
+    void displayUserMenu() override;
 
     int getLoyaltyPoints() const;         // Getter for loyalty points
     void setLoyaltyPoints(int points);    // Setter for loyalty points
     void addLoyaltyPoints(int points);    // Method to add loyalty points
     void redeemLoyaltyPoints(int points); // Method to redeem loyalty points
+
 };
 
 #endif // Passenger_HPP

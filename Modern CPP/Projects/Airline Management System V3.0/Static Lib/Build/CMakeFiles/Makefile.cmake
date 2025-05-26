@@ -9,7 +9,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "CMakeFiles/3.28.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeSystem.cmake"
-  "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/CMakeLists.txt"
+  "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/Static Lib/CMakeLists.txt"
   "/usr/share/cmake-3.28/Modules/CMakeCXXCompiler.cmake.in"
   "/usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp"
   "/usr/share/cmake-3.28/Modules/CMakeCXXInformation.cmake"

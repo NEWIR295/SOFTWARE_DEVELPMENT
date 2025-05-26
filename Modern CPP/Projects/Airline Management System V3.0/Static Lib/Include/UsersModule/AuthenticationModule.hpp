@@ -30,6 +30,8 @@ public:
 
     std::string generateUniqueId(Role role) const; // Generate a unique ID for a user based on their role
     static std::string hashPassword(const std::string& password); // Hash the password for secure storage
+
+    std::shared_ptr<User> getUserById(const std::string &userID) const;
 };
 
 #endif // AuthenticationModule_hpp

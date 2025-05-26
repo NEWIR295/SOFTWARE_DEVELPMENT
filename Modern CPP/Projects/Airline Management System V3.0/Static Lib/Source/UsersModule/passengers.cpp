@@ -6,8 +6,13 @@ Description:
             -> This file contains the implementation of the Passenger class, which represents a passenger in the airline management system.
 */
 
-#include "../../Include/UsersModule/passengers.hpp"
 #include <iostream>
+#include "../../Include/UsersModule/passengers.hpp"
+#include "../../Include/BookingModule/bookingHandler.hpp"
+#include "../../Include/CheckInModule/checkInHandling.hpp"
+#include "../../Include/BookingModule/payment.hpp"
+#include "../../Include/Flight_AircraftModule/flightDataHandling.hpp"
+
 
 Passenger::Passenger(const std::string userID, const std::string username, const std::string passwordHashed, const Role role) : User(userID, username, passwordHashed, role), loyaltyPoints(0)
 {                            // Initialize loyalty points to 0
@@ -35,9 +40,73 @@ void Passenger::redeemLoyaltyPoints(int points)
     }
 }
 
-void Passenger::displayUserInfo() const
-{
-    std::cout << "\n--- Passenger Menu ---\n";
-    std::cout << "1. Book Flight\n2. View Booking History\n3. Manage Profile\n4. Logout\n";
-    std::cout << "Loyalty Points: " << loyaltyPoints << "\n"; // Display loyalty points
+
+void Passenger::displayUserMenu() {
+    int choice;
+    BookingHandler bm;
+    bm.loadReservations();
+    CheckInHandler cim;
+
+    do {
+        std::cout << "\n--- Passenger Menu ---\n";
+        std::cout << "1. View My Reservations\n";
+        std::cout << "2. Cancel My Reservation\n";
+        std::cout << "3. Book a Flight\n";
+        std::cout << "4. Online Check-In\n";
+        std::cout << "5. View Loyalty Points\n";
+        std::cout << "0. Logout\nChoice: ";
+        std::cin >> choice;
+
+        switch(choice) {
+            case 1:
+                bm.listReservationsForPassenger(getUserID());
+                break;
+            case 2: {
+                std::string rid;
+                std::cout << "Reservation ID: "; 
+                std::cin >> rid;
+                bm.cancelReservation(rid);
+                break;
+            }
+            case 3: {
+                std::string flightNum, seat;
+                std::cout << "Flight Number: "; 
+                std::cin >> flightNum;
+                std::cout << "Seat (e.g., 12A): "; 
+                std::cin >> seat;
+
+                int payMethod;
+                std::cout << "Payment Method: 1-Cash 2-Card 3-PayPal: ";
+                std::cin >> payMethod;
+
+                std::shared_ptr<Payment> strategy;
+                if (payMethod == 1) 
+                    strategy = std::make_shared<Payment>(std::make_shared<CashMethod>());
+                else if (payMethod == 2) 
+                    strategy = std::make_shared<Payment>(std::make_shared<CreditCardMethod>());
+                else 
+                    strategy = std::make_shared<Payment>(std::make_shared<PaypalMethod>());
+                
+                flightDataHandling fdh;
+                double flightPrice = fdh.getFlightPrice(flightNum);
+
+                bm.createReservation(getUserID(), flightNum, seat, strategy, shared_from_this(), flightPrice); // Assuming flight price is 0.0 for simplicity
+                break;
+            }
+            case 4: {
+                std::string rid, name;
+                std::cout << "Reservation ID: ";
+                std::cin >> rid;
+                std::cout << "Passenger Name: ";
+                std::cin.ignore();
+                std::getline(std::cin, name);
+                cim.airportCheckIn(bm.getReservations(), rid, name);
+                break;
+            }
+            case 5:
+                std::cout << "Your current loyalty points: " << getLoyaltyPoints() << "\n";
+                break;
+        }
+    } while (choice != 0);
+
 }

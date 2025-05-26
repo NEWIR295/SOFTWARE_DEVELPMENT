@@ -1,7 +1,7 @@
 CMakeFiles/AirLineLib.dir/Source/BookingModule/reservation.cpp.o: \
- /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/BookingModule/reservation.cpp \
+ /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/BookingModule/reservation.cpp \
  /usr/include/stdc-predef.h \
- /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Source/BookingModule/../../Include/BookingModule/reservation.hpp \
+ /home/newir529/SOFTWARE_DEVELPMENT/Modern\ CPP/Projects/Airline\ Management\ System\ V3.0/Static\ Lib/Source/BookingModule/../../Include/BookingModule/reservation.hpp \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

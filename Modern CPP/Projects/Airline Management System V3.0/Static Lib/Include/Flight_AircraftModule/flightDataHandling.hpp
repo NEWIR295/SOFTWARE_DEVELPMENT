@@ -32,13 +32,15 @@ public:
     bool addFlight(const Flight& flight); // Add a new flight to the system
     bool removeFlight(const std::string& flightID); // Remove a flight by its ID
     std::string generateFlightUniqueId(void) const; // Generate a unique ID for a flight
-
+    double getFlightPrice(const std::string &flightID) const;
+    
     bool loadAircraftData(void);
     bool saveAircraftData(void);
     std::vector<Aircraft> getAircrafts(void) const;
     bool addAircraft(const Aircraft& aircraft); // Add a new aircraft to the system
     bool removeAircraft(const std::string& aircraftID); // Remove an aircraft by its ID
     std::string generateAircraftUniqueId(void) const; // Generate a unique ID for an aircraft
+    int getAircraftCapacityByID(const std::string &aircraftID) const ;
 
 };
 
