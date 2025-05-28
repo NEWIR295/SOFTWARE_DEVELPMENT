@@ -56,7 +56,7 @@ bool AuthenticationModule::saveUser(void)
         }
     }
 
-    std::ofstream outputUsersJsonFile("../../Data/users.json", std::ios::out | std::ios::trunc);
+    std::ofstream outputUsersJsonFile("../Data/users.json", std::ios::out | std::ios::trunc); // change the path to "../Data/users.json" to match the executable location
 
     if (!outputUsersJsonFile)
         return false;
@@ -75,7 +75,7 @@ bool AuthenticationModule::saveUser(void)
 bool AuthenticationModule::loadUser(void)
 {
 
-    std::ifstream inputUsersJsonFile("../../Data/users.json", std::ios::in);
+    std::ifstream inputUsersJsonFile("../Data/users.json", std::ios::in);
 
     if (!inputUsersJsonFile)
         return false; // If the file cannot be opened or doesn't exist, return
@@ -85,10 +85,15 @@ bool AuthenticationModule::loadUser(void)
 
     for (const auto &user : usersJson)
     {
-        std::string userID = user["userID"];
-        std::string username = user["username"];
-        std::string passwordHashed = user["password hashed"];
-        Role role = static_cast<Role>(user["role"]);
+        if (!user.contains("userID") || !user.contains("username") || !user.contains("password hashed") || !user.contains("role"))
+        {
+            continue; // Skip this user if any required field is missing
+        }
+
+        std::string userID = user["userID"].get<std::string>();
+        std::string username = user["username"].get<std::string>();
+        std::string passwordHashed = user["password hashed"].get<std::string>();
+        Role role = static_cast<Role>(user["role"].get<int>());
 
         if (role == Role::Admin)
         {

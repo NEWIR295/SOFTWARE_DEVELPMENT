@@ -1,0 +1,21 @@
+[
+    {
+        "loyaltyPoints": 0,
+        "password hashed": "9780118069787534874",
+        "role": 1,
+        "userID": "PAS0001",
+        "username": "3lm"
+    },
+    {
+        "password hashed": "8141937955048696534",
+        "role": 0,
+        "userID": "ADM0001",
+        "username": "admin"
+    },
+    {
+        "password hashed": "11804427062281210885",
+        "role": 2,
+        "userID": "BA0001",
+        "username": "tarek"
+    }
+]
