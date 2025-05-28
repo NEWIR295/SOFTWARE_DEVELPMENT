@@ -32,7 +32,7 @@ BookingHandler::BookingHandler()
 */
 bool BookingHandler::loadReservations()
 {
-    std::ifstream resInputFile("../../Data/reservations.json", std::ios::in);
+    std::ifstream resInputFile("../Data/reservations.json", std::ios::in);
     if (!resInputFile)
         return false; // File not found or cannot be opened
 
@@ -40,8 +40,10 @@ bool BookingHandler::loadReservations()
     resInputFile >> reservationsJson;
     for (auto &res : reservationsJson)
     {
-        reservations.emplace_back(
-            res["id"], res["passengerId"], res["flightNumber"], res["seat"], res["paid"]);
+        if (res.contains("id") && res.contains("passengerId") && res.contains("flightNumber") && res.contains("seat") && res.contains("paid")) {
+            reservations.emplace_back(
+                res["id"], res["passengerId"], res["flightNumber"], res["seat"], res["paid"]);
+        }
     }
     resInputFile.close();
     if (reservations.empty())
@@ -65,7 +67,7 @@ bool BookingHandler::saveReservations()
                      {"seat", res.getSeat()},
                      {"paid", res.isPaid()}});
     }
-    std::ofstream outputResJsonFile("../../Data/reservations.json", std::ios::out | std::ios::trunc);
+    std::ofstream outputResJsonFile("../Data/reservations.json", std::ios::out | std::ios::trunc);
 
     if(!outputResJsonFile)
         return false; // If the file cannot be opened, return false

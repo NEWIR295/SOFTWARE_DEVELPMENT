@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/AirLineMAnagementSystem_GUI/lib/libAirLineLib.a"
+  "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/Projects/Airline Management System V3.0/AirLineMAnagementSystem_GUI/lib/libAirLineLib.pdb"
   "CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.o"
   "CMakeFiles/AirLineLib.dir/Source/BookingModule/bookingHandler.cpp.o.d"
   "CMakeFiles/AirLineLib.dir/Source/BookingModule/payment.cpp.o"
@@ -31,8 +33,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/AirLineLib.dir/Source/UsersModule/passengers.cpp.o.d"
   "CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.o"
   "CMakeFiles/AirLineLib.dir/Source/UsersModule/user.cpp.o.d"
-  "libAirLineLib.a"
-  "libAirLineLib.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

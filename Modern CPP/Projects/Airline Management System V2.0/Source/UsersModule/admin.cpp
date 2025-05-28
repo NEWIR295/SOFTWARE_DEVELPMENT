@@ -34,7 +34,7 @@ void Admin::displayUserMenu()
         std::cout << "7. Add new Flight\n";
         std::cout << "8. Add new Aircraft\n";
         std::cout << "9. Edit Admin Details\n";
-        std::cout << "0. Logout\nChoice: ";
+        std::cout << "0. Logout\n\nChoice: ";
         std::cin >> choice;
 
         switch (choice)
@@ -46,7 +46,7 @@ void Admin::displayUserMenu()
             for (const auto &flight : flights)
             {
                 std::cout << "Flight " << flight.getFlightID() << ": "
-                          << flight.getOrigin() << " -> " << flight.getDestination() << "\n";
+                          << flight.getOrigin() << " -> " << flight.getDestination() << ", at time "<< flight.getDepartureTime() << "\n";
             }
             break;
         }

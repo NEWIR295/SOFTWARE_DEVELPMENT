@@ -57,6 +57,9 @@ public:
     bool checkPassword(const std::string &passwordHashed) const; // Check if the provided password matches the hashed password
 
     virtual void displayUserMenu() = 0; // Pure virtual function for displaying user information
+
+    bool editUserDetails(const std::string &newUsername, const std::string &newPasswordHashed);
+
 };
 
 #endif // USER_HPP

@@ -91,7 +91,7 @@ Description:
         {
             std::cout << "\nThank you for using Airline Management System!\n"
                       << "Goodbye! ✈️\n";
-            return false; // Exit the application
+            return true; // Exit the application
         }
         default:
         {

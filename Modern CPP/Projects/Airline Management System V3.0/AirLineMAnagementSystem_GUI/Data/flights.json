@@ -1,0 +1,13 @@
+[
+    {
+        "aircraftID": "AIR0001",
+        "arrivalTime": "02:00",
+        "capacity": 0,
+        "departureTime": "12:00",
+        "destination": "luxor",
+        "flightID": "FLIGHT0001",
+        "origin": "cairo",
+        "price": 2000.0,
+        "status": 0
+    }
+]

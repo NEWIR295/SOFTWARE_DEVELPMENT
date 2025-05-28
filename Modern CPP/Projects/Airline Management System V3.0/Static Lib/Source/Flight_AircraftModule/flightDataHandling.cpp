@@ -35,7 +35,7 @@ flightDataHandling::flightDataHandling()
 */
 bool flightDataHandling::loadFlightData(void)
 {
-    std::ifstream inputFlightsJsonFile("../../Data/flights.json", std::ios::in);
+    std::ifstream inputFlightsJsonFile("../Data/flights.json", std::ios::in);
 
     if (!inputFlightsJsonFile)
         return false; // If the file cannot be opened or doesn't exist, return
@@ -45,6 +45,19 @@ bool flightDataHandling::loadFlightData(void)
 
     for (const auto &flight : flightsJson)
     {
+        // Check if all required keys exist before accessing
+        if (!flight.contains("flightID") ||
+            !flight.contains("origin") ||
+            !flight.contains("destination") ||
+            !flight.contains("departureTime") ||
+            !flight.contains("arrivalTime") ||
+            !flight.contains("status") ||
+            !flight.contains("aircraftID") ||
+            !flight.contains("capacity") ||
+            !flight.contains("price"))
+        {
+            continue; // Skip this entry if any key is missing
+        }
 
         std::string flightID = flight["flightID"];
         std::string origin = flight["origin"];
@@ -88,7 +101,7 @@ bool flightDataHandling::saveFlightData(void)
                                {"price", flight.getPrice()}});
     }
 
-    std::ofstream outputUserJsonFile("../../Data/flights.json", std::ios::out | std::ios::trunc);
+    std::ofstream outputUserJsonFile("../Data/flights.json", std::ios::out | std::ios::trunc);
 
     if (!outputUserJsonFile)
         return false; // If the file cannot be opened, return false
@@ -192,7 +205,7 @@ double flightDataHandling::getFlightPrice(const std::string &flightID) const
 */
 bool flightDataHandling::loadAircraftData(void)
 {
-    std::ifstream inputAircraftJsonFile("../../Data/aircrafts.json", std::ios::in);
+    std::ifstream inputAircraftJsonFile("../Data/aircrafts.json", std::ios::in);
 
     if (!inputAircraftJsonFile)
         return false; // If the file cannot be opened or doesn't exist, return
@@ -202,6 +215,14 @@ bool flightDataHandling::loadAircraftData(void)
 
     for (const auto &aircraft : aircraftsJson)
     {
+        // Check if all required keys exist before accessing
+        if (!aircraft.contains("aircraftID") ||
+            !aircraft.contains("aircraftModel") ||
+            !aircraft.contains("capacity") ||
+            !aircraft.contains("isAvailable"))
+        {
+            continue; // Skip this entry if any key is missing
+        }
 
         std::string aircraftID = aircraft["aircraftID"];
         std::string model = aircraft["aircraftModel"];
@@ -235,7 +256,7 @@ bool flightDataHandling::saveAircraftData(void)
                                  {"isAvailable", aircraft.getAvailability()}});
     }
 
-    std::ofstream outputAircraftJsonFile("../../Data/aircrafts.json", std::ios::out | std::ios::trunc);
+    std::ofstream outputAircraftJsonFile("../Data/aircrafts.json", std::ios::out | std::ios::trunc);
 
     if (!outputAircraftJsonFile)
         return false; // If the file cannot be opened, return false

@@ -1,3 +1,8 @@
 [
-
+    {
+        "aircraftID": "AIR0001",
+        "aircraftModel": "Boeing",
+        "capacity": 200,
+        "isAvailable": true
+    }
 ]

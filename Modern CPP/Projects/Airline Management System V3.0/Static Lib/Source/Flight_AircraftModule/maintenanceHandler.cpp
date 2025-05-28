@@ -28,7 +28,7 @@ MaintenanceHandler::MaintenanceHandler()
 */
 bool MaintenanceHandler::loadLogs()
 {
-    std::ifstream inputMaintenanceJsonFile("../../Data/maintenance.json", std::ios::in);
+    std::ifstream inputMaintenanceJsonFile("../Data/maintenance.json", std::ios::in);
     if (!inputMaintenanceJsonFile)
         return false; // If the file cannot be opened or doesn't exist, return false
 
@@ -37,8 +37,14 @@ bool MaintenanceHandler::loadLogs()
 
     for (auto &item : maintenanceJson)
     {
-        logs.emplace_back(item["id"], item["aircraftId"], item["date"],
-                          item["description"], item["parts"]);
+        if (item.contains("id") && item.contains("aircraftId") &&
+            item.contains("date") && item.contains("description") &&
+            item.contains("parts"))
+        {
+            logs.emplace_back(item["id"], item["aircraftId"], item["date"],
+                              item["description"], item["parts"]);
+        }
+        // Optionally, else log or handle missing fields
     }
 
     inputMaintenanceJsonFile.close(); // Close the file after reading
@@ -63,7 +69,7 @@ bool MaintenanceHandler::saveLogs()
                                    {"description", log.getDescription()},
                                    {"parts", log.getPartsReplaced()}});
     }
-    std::ofstream outputMaintenanceJsonFile("../../Data/maintenance.json", std::ios::out | std::ios::trunc);
+    std::ofstream outputMaintenanceJsonFile("../Data/maintenance.json", std::ios::out | std::ios::trunc);
 
     if (!outputMaintenanceJsonFile)
         return false; // If the file cannot be opened, return false

@@ -1,3 +1,9 @@
 [
-    
+    {
+        "aircraftId": "AIR0001",
+        "date": "15/6/2027",
+        "description": "the aircraft was sad",
+        "id": "MAINT0001",
+        "parts": "her heart"
+    }
 ]

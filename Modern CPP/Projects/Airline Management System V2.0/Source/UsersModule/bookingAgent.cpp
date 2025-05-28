@@ -25,6 +25,7 @@ void BookingAgent::displayUserMenu() {
     BookingHandler bm;
     bm.loadReservations();
     flightDataHandling fdh;
+    AuthenticationModule authModule;
 
     do {
         std::cout << "\n--- Booking Agent Menu ---\n";
@@ -66,7 +67,6 @@ void BookingAgent::displayUserMenu() {
                     strategy = std::make_shared<Payment>(std::make_shared<CreditCardMethod>());
                 else 
                     strategy = std::make_shared<Payment>(std::make_shared<PaypalMethod>());
-                AuthenticationModule authModule;
                 std::shared_ptr<User> user = authModule.getUserById(passengerId);
                 double flightPrice = fdh.getFlightPrice(flightNum);
                 bm.createReservation(getUserID(), flightNum, seat, strategy, std::dynamic_pointer_cast<Passenger>(user), flightPrice); // Assuming flight price is 0.0 for simplicity

@@ -46,6 +46,7 @@ void Passenger::displayUserMenu() {
     BookingHandler bm;
     bm.loadReservations();
     CheckInHandler cim;
+    flightDataHandling fdh;
 
     do {
         std::cout << "\n--- Passenger Menu ---\n";
@@ -87,7 +88,6 @@ void Passenger::displayUserMenu() {
                 else 
                     strategy = std::make_shared<Payment>(std::make_shared<PaypalMethod>());
                 
-                flightDataHandling fdh;
                 double flightPrice = fdh.getFlightPrice(flightNum);
 
                 bm.createReservation(getUserID(), flightNum, seat, strategy, shared_from_this(), flightPrice); // Assuming flight price is 0.0 for simplicity
@@ -98,8 +98,7 @@ void Passenger::displayUserMenu() {
                 std::cout << "Reservation ID: ";
                 std::cin >> rid;
                 std::cout << "Passenger Name: ";
-                std::cin.ignore();
-                std::getline(std::cin, name);
+                std::cin >> name;
                 cim.airportCheckIn(bm.getReservations(), rid, name);
                 break;
             }

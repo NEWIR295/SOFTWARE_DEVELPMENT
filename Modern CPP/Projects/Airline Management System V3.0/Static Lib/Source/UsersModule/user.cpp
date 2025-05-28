@@ -53,3 +53,20 @@ bool User::checkPassword(const std::string &passwordHashed) const // Check if th
 {
     return this->passwordHashed == passwordHashed;
 }
+
+bool User::editUserDetails(const std::string &newUsername, const std::string &newPasswordHashed)
+{
+
+    // Check if the new username is valid (not empty)
+    if (!newUsername.empty())
+    {
+        this->setUsername(newUsername);
+    }
+    // If newPasswordHashed is empty, we do not change the password
+    if (!newPasswordHashed.empty())
+    {
+        this->setPasswordHashed(newPasswordHashed);
+    }
+
+    return true; // Return true if the edit was successful
+}

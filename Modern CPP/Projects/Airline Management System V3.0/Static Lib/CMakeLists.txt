@@ -49,6 +49,13 @@ add_library(AirLineLib STATIC ${LIB_SOURCES})
 target_include_directories(AirLineLib PUBLIC ./Include)
 target_compile_features(AirLineLib PUBLIC cxx_std_17)
 
+
+# Set the output directory for the static library to be in the lib folder in AirLineMAnagementSystem_GUI directory i.e. QT GUI project
+set_target_properties(AirLineLib PROPERTIES
+    ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/../AirLineMAnagementSystem_GUI/lib
+)
+
+
 # # Main application (depends only on main.cpp)
 # add_executable(Output ./Source/Application/main.cpp)
 # target_include_directories(Output PRIVATE ./Include)
