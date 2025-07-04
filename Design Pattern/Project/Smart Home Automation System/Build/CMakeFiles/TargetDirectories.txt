@@ -1,0 +1,3 @@
+/home/newir529/SOFTWARE_DEVELPMENT/Design Pattern/Project/Smart Home Automation System/Build/CMakeFiles/Output.dir
+/home/newir529/SOFTWARE_DEVELPMENT/Design Pattern/Project/Smart Home Automation System/Build/CMakeFiles/edit_cache.dir
+/home/newir529/SOFTWARE_DEVELPMENT/Design Pattern/Project/Smart Home Automation System/Build/CMakeFiles/rebuild_cache.dir

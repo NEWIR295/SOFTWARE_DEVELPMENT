@@ -1,0 +1,9 @@
+/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/QT/Testing2/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/Testing2.dir
+/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/QT/Testing2/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/edit_cache.dir
+/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/QT/Testing2/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/rebuild_cache.dir
+/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/QT/Testing2/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/list_install_components.dir
+/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/QT/Testing2/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/install.dir
+/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/QT/Testing2/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/install/local.dir
+/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/QT/Testing2/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/install/strip.dir
+/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/QT/Testing2/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/Testing2_autogen_timestamp_deps.dir
+/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/QT/Testing2/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/Testing2_autogen.dir

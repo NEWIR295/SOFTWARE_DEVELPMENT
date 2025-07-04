@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-9dfafbeb4c931b0484c5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "TESTing",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "TESTing::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TESTing-Debug-1212670c99dccb9dcda6.json",
+					"name" : "TESTing",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TESTing_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TESTing_autogen-Debug-85f76800bf7d69fe1848.json",
+					"name" : "TESTing_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TESTing_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TESTing_autogen_timestamp_deps-Debug-94e6decba1f8a4ec6aa8.json",
+					"name" : "TESTing_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/newir529/SOFTWARE_DEVELPMENT/Modern CPP/QT/TESTing/build/Desktop_Qt_6_9_0-Debug",
+		"source" : "/home/newir529/SOFTWARE_DEVELPMENT/QT/TESTing"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
