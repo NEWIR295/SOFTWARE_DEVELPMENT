@@ -11,6 +11,8 @@ Description:
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QFont>
+#include <QApplication>
 #include <QDateTime>
 #include <QTextCursor>
 #include <QMainWindow>
@@ -108,7 +110,7 @@ private:
     void setupStatusTab();
     void connectSignals();
     void logMessage(const QString& message);
-    
+    void setupDeviceSpecificControls(void);
     // Core system components
     std::unique_ptr<CommandManager> cmdMgr;
     std::unique_ptr<AutomationContext> automation;
