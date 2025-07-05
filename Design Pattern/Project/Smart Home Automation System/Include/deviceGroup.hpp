@@ -31,6 +31,7 @@ public:
     void turnOn() override;
     void turnOff() override;
     std::string getStatus() const override;
+    const std::vector<std::shared_ptr<SmartDevice>>& getDevices() const { return devices; }
 };
 
 #endif // DEVICE_GROUP_HPP

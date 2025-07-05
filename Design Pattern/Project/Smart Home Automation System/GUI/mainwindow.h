@@ -35,6 +35,7 @@ Description:
 #include <QSplitter>
 #include <memory>
 #include <map>
+#include <QTreeWidget>
 
 // Include your smart home system headers
 #include "../Include/lightState.hpp"
@@ -98,7 +99,7 @@ private slots:
     
     // UI Updates
     void updateDeviceList();
-    void updateGroupList();
+    void updateGroupTree();
     void updateDeviceControls();
     void updateSystemStatus();
 
@@ -152,7 +153,7 @@ private:
     
     // Group Tab
     QWidget *groupTab;
-    QListWidget *groupList;
+    QTreeWidget *groupTree;
     QPushButton *createGroupBtn;
     QPushButton *addToGroupBtn;
     QPushButton *groupOnBtn;

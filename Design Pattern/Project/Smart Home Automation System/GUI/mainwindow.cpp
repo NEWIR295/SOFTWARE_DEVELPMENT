@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include <QTreeWidget>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -14,22 +15,32 @@ MainWindow::MainWindow(QWidget *parent)
     connectSignals();
     
     // Initialize with some default devices
-    auto light = DeviceFactory::createDevice("light");
-    auto thermostat = DeviceFactory::createDevice("thermostat");
-    auto doorLock = DeviceFactory::createDevice("doorlock");
-    auto camera = DeviceFactory::createDevice("camera");
+    auto light = DeviceFactory::createDevice("LEDLight");
+    auto thermostat = DeviceFactory::createDevice("Thermostat");
+    auto doorLock = DeviceFactory::createDevice("DoorLock");
+    auto camera = DeviceFactory::createDevice("SecurityCamera");
     
-    allDevices["Living Room Light"] = light;
-    allDevices["Main Thermostat"] = thermostat;
-    allDevices["Front Door"] = doorLock;
-    allDevices["Security Camera"] = camera;
+    if (light) allDevices["Living Room Light"] = std::shared_ptr<SmartDevice>(light.release());
+    if (thermostat) allDevices["Main Thermostat"] = std::shared_ptr<SmartDevice>(thermostat.release());
+    if (doorLock) allDevices["Front Door"] = std::shared_ptr<SmartDevice>(doorLock.release());
+    if (camera) allDevices["Security Camera"] = std::shared_ptr<SmartDevice>(camera.release());
     
     // Register devices with central controller
     HomeController& controller = HomeController::getInstance();
-    controller.registerDevice("Living Room Light", light);
-    controller.registerDevice("Main Thermostat", thermostat);
-    controller.registerDevice("Front Door", doorLock);
-    controller.registerDevice("Security Camera", camera);
+    if (allDevices.count("Living Room Light")) {
+        controller.registerDevice("Living Room Light", allDevices["Living Room Light"]);
+        // Register the light as motion observer (like in main.cpp)
+        sensor->addObserver(dynamic_cast<Observer*>(allDevices["Living Room Light"].get()));
+    }
+    if (allDevices.count("Main Thermostat")) {
+        controller.registerDevice("Main Thermostat", allDevices["Main Thermostat"]);
+    }
+    if (allDevices.count("Front Door")) {
+        controller.registerDevice("Front Door", allDevices["Front Door"]);
+    }
+    if (allDevices.count("Security Camera")) {
+        controller.registerDevice("Security Camera", allDevices["Security Camera"]);
+    }
     
     // Setup motion sensor with observable light
     auto obsLight = std::make_shared<ObservableLEDLight>();
@@ -270,7 +281,9 @@ void MainWindow::setupGroupTab()
     
     QLabel* groupLabel = new QLabel("Device Groups:");
     groupLabel->setFont(QFont("Arial", 12, QFont::Bold));
-    groupList = new QListWidget();
+    groupTree = new QTreeWidget();
+    groupTree->setHeaderLabels({"Group / Device"});
+    groupTree->setMinimumWidth(200);
     
     QHBoxLayout* groupBtnLayout = new QHBoxLayout();
     createGroupBtn = new QPushButton("Create Group");
@@ -285,7 +298,7 @@ void MainWindow::setupGroupTab()
     groupControlLayout->addWidget(groupOffBtn);
     
     leftLayout->addWidget(groupLabel);
-    leftLayout->addWidget(groupList);
+    leftLayout->addWidget(groupTree);
     leftLayout->addLayout(groupBtnLayout);
     leftLayout->addLayout(groupControlLayout);
     
@@ -421,9 +434,14 @@ void MainWindow::connectSignals()
     connect(addToGroupBtn, &QPushButton::clicked, this, &MainWindow::onAddToGroup);
     connect(groupOnBtn, &QPushButton::clicked, this, &MainWindow::onControlGroup);
     connect(groupOffBtn, &QPushButton::clicked, this, &MainWindow::onControlGroup);
-    connect(groupList, &QListWidget::currentTextChanged, this, [this](const QString& text) {
-        currentGroup = text;
-        updateDeviceList();
+    connect(groupTree, &QTreeWidget::currentItemChanged, this, [this](QTreeWidgetItem* current, QTreeWidgetItem* previous) {
+        if (current && !current->parent()) {
+            currentGroup = current->text(0);
+            logMessage(QString("Selected group: %1").arg(currentGroup));
+        } else {
+            currentGroup.clear();
+            logMessage("No group selected");
+        }
     });
     
     // Automation tab connections
@@ -454,14 +472,23 @@ void MainWindow::onAddDevice()
         
         if (ok && !name.isEmpty()) {
             std::string deviceType = type.toLower().toStdString();
-            if (deviceType == "door lock") deviceType = "doorlock";
-            if (deviceType == "security camera") deviceType = "camera";
+            if (deviceType == "light") deviceType = "LEDLight";
+            if (deviceType == "door lock") deviceType = "DoorLock";
+            if (deviceType == "security camera") deviceType = "SecurityCamera";
             
             auto device = DeviceFactory::createDevice(deviceType);
             if (device) {
-                allDevices[name.toStdString()] = device;
-                HomeController::getInstance().registerDevice(name.toStdString(), device);
+                allDevices[name.toStdString()] = std::shared_ptr<SmartDevice>(device.release());
+                HomeController::getInstance().registerDevice(name.toStdString(), allDevices[name.toStdString()]);
+                
+                // Register LED lights as motion observers (like in main.cpp)
+                if (deviceType == "LEDLight") {
+                    sensor->addObserver(dynamic_cast<Observer*>(allDevices[name.toStdString()].get()));
+                }
+                
                 updateDeviceList();
+                updateSystemStatus();
+                updateGroupTree();
                 logMessage(QString("Added device: %1 (%2)").arg(name, type));
             }
         }
@@ -482,6 +509,8 @@ void MainWindow::onRemoveDevice()
     if (ret == QMessageBox::Yes) {
         allDevices.erase(currentDevice.toStdString());
         updateDeviceList();
+        updateSystemStatus();
+        updateGroupTree();
         logMessage(QString("Removed device: %1").arg(currentDevice));
         currentDevice.clear();
     }
@@ -501,38 +530,65 @@ void MainWindow::onDeviceSelectionChanged()
 
 void MainWindow::onTurnOnDevice()
 {
-    if (currentDevice.isEmpty()) return;
+    if (currentDevice.isEmpty()) {
+        logMessage("No device selected for turn on operation");
+        return;
+    }
     
     auto it = allDevices.find(currentDevice.toStdString());
-    if (it != allDevices.end()) {
-        auto cmd = std::make_unique<TurnOnCommand>(it->second.get());
-        cmdMgr->executeCommand(std::move(cmd));
-        logMessage(QString("Turned on: %1").arg(currentDevice));
+    if (it != allDevices.end() && it->second) {
+        try {
+            auto cmd = std::make_unique<TurnOnCommand>(it->second.get());
+            cmdMgr->executeCommand(std::move(cmd));
+            logMessage(QString("Turned on: %1").arg(currentDevice));
+        } catch (const std::exception& e) {
+            logMessage(QString("Error turning on %1: %2").arg(currentDevice, QString::fromStdString(e.what())));
+        }
+    } else {
+        logMessage(QString("Device not found: %1").arg(currentDevice));
     }
 }
 
 void MainWindow::onTurnOffDevice()
 {
-    if (currentDevice.isEmpty()) return;
+    if (currentDevice.isEmpty()) {
+        logMessage("No device selected for turn off operation");
+        return;
+    }
     
     auto it = allDevices.find(currentDevice.toStdString());
-    if (it != allDevices.end()) {
-        auto cmd = std::make_unique<TurnOffCommand>(it->second.get());
-        cmdMgr->executeCommand(std::move(cmd));
-        logMessage(QString("Turned off: %1").arg(currentDevice));
+    if (it != allDevices.end() && it->second) {
+        try {
+            auto cmd = std::make_unique<TurnOffCommand>(it->second.get());
+            cmdMgr->executeCommand(std::move(cmd));
+            logMessage(QString("Turned off: %1").arg(currentDevice));
+        } catch (const std::exception& e) {
+            logMessage(QString("Error turning off %1: %2").arg(currentDevice, QString::fromStdString(e.what())));
+        }
+    } else {
+        logMessage(QString("Device not found: %1").arg(currentDevice));
     }
 }
 
 void MainWindow::onGetDeviceStatus()
 {
-    if (currentDevice.isEmpty()) return;
+    if (currentDevice.isEmpty()) {
+        logMessage("No device selected for status check");
+        return;
+    }
     
     auto it = allDevices.find(currentDevice.toStdString());
-    if (it != allDevices.end()) {
-        std::string status = it->second->getStatus();
-        logMessage(QString("%1 Status: %2").arg(currentDevice, QString::fromStdString(status)));
-        QMessageBox::information(this, "Device Status", 
-                                QString("%1:\n%2").arg(currentDevice, QString::fromStdString(status)));
+    if (it != allDevices.end() && it->second) {
+        try {
+            std::string status = it->second->getStatus();
+            logMessage(QString("%1 Status: %2").arg(currentDevice, QString::fromStdString(status)));
+            QMessageBox::information(this, "Device Status", 
+                                    QString("%1:\n%2").arg(currentDevice, QString::fromStdString(status)));
+        } catch (const std::exception& e) {
+            logMessage(QString("Error getting status for %1: %2").arg(currentDevice, QString::fromStdString(e.what())));
+        }
+    } else {
+        logMessage(QString("Device not found: %1").arg(currentDevice));
     }
 }
 
@@ -573,7 +629,7 @@ void MainWindow::onLockDoor()
     if (it != allDevices.end()) {
         auto doorLock = std::dynamic_pointer_cast<DoorLock>(it->second);
         if (doorLock) {
-            doorLock->lock();
+            doorLock->turnOff(); // lock (like in main.cpp)
             logMessage(QString("Locked: %1").arg(currentDevice));
         }
     }
@@ -587,7 +643,7 @@ void MainWindow::onUnlockDoor()
     if (it != allDevices.end()) {
         auto doorLock = std::dynamic_pointer_cast<DoorLock>(it->second);
         if (doorLock) {
-            doorLock->unlock();
+            doorLock->turnOn(); // unlock (like in main.cpp)
             logMessage(QString("Unlocked: %1").arg(currentDevice));
         }
     }
@@ -630,31 +686,66 @@ void MainWindow::onCreateGroup()
     if (ok && !groupName.isEmpty()) {
         auto group = std::make_shared<DeviceGroup>(groupName.toStdString());
         allGroups[groupName.toStdString()] = group;
-        updateGroupList();
+        HomeController::getInstance().registerDevice(groupName.toStdString(), group);
+        updateGroupTree();
+        updateSystemStatus();
         logMessage(QString("Created group: %1").arg(groupName));
     }
 }
 
 void MainWindow::onAddToGroup()
 {
+    logMessage(QString("Attempting to add device to group. Current group: '%1'").arg(currentGroup));
+    
     if (currentGroup.isEmpty()) {
         QMessageBox::warning(this, "Warning", "Please select a group first.");
+        logMessage("No group selected for adding device");
         return;
     }
     
     QListWidgetItem* item = availableDevicesList->currentItem();
     if (!item) {
         QMessageBox::warning(this, "Warning", "Please select a device to add.");
+        logMessage("No device selected from available devices list");
         return;
     }
     
     QString deviceName = item->text();
+    logMessage(QString("Selected device: '%1'").arg(deviceName));
+    
     auto groupIt = allGroups.find(currentGroup.toStdString());
     auto deviceIt = allDevices.find(deviceName.toStdString());
     
-    if (groupIt != allGroups.end() && deviceIt != allDevices.end()) {
+    if (groupIt == allGroups.end()) {
+        logMessage(QString("Group '%1' not found in allGroups").arg(currentGroup));
+        QMessageBox::warning(this, "Error", QString("Group '%1' not found").arg(currentGroup));
+        return;
+    }
+    
+    if (deviceIt == allDevices.end()) {
+        logMessage(QString("Device '%1' not found in allDevices").arg(deviceName));
+        QMessageBox::warning(this, "Error", QString("Device '%1' not found").arg(deviceName));
+        return;
+    }
+    
+    // Check if device is already in the group
+    bool alreadyInGroup = false;
+    for (const auto& device : groupIt->second->getDevices()) {
+        if (device == deviceIt->second) {
+            alreadyInGroup = true;
+            break;
+        }
+    }
+    
+    if (alreadyInGroup) {
+        QMessageBox::information(this, "Info", QString("Device %1 is already in group %2").arg(deviceName, currentGroup));
+        logMessage(QString("Device %1 is already in group %2").arg(deviceName, currentGroup));
+    } else {
         groupIt->second->addDevice(deviceIt->second);
-        logMessage(QString("Added %1 to group %2").arg(deviceName, currentGroup));
+        updateGroupTree();
+        updateSystemStatus();
+        logMessage(QString("Successfully added %1 to group %2").arg(deviceName, currentGroup));
+        QMessageBox::information(this, "Success", QString("Added %1 to group %2").arg(deviceName, currentGroup));
     }
 }
 
@@ -670,11 +761,17 @@ void MainWindow::onControlGroup()
     
     if (groupIt != allGroups.end()) {
         if (button == groupOnBtn) {
-            groupIt->second->turnOn();
-            logMessage(QString("Turned on group: %1").arg(currentGroup));
+            auto cmd = std::make_unique<TurnOnCommand>(groupIt->second.get());
+            cmdMgr->executeCommand(std::move(cmd));
+            updateSystemStatus();
+            updateGroupTree();
+            logMessage(QString("=== Turned ON group: %1 ===").arg(currentGroup));
         } else if (button == groupOffBtn) {
-            groupIt->second->turnOff();
-            logMessage(QString("Turned off group: %1").arg(currentGroup));
+            auto cmd = std::make_unique<TurnOffCommand>(groupIt->second.get());
+            cmdMgr->executeCommand(std::move(cmd));
+            updateSystemStatus();
+            updateGroupTree();
+            logMessage(QString("=== Turned OFF group: %1 ===").arg(currentGroup));
         }
     }
 }
@@ -740,15 +837,52 @@ void MainWindow::updateDeviceList()
         availableDevicesList->addItem(deviceName);
         automationDevicesList->addItem(deviceName);
     }
+    updateSystemStatus();
+    updateGroupTree();
 }
 
-void MainWindow::updateGroupList()
+void MainWindow::updateGroupTree()
 {
-    groupList->clear();
+    // Store current selection
+    QString selectedGroup = currentGroup;
     
-    for (const auto& pair : allGroups) {
-        QString groupName = QString::fromStdString(pair.first);
-        groupList->addItem(groupName);
+    groupTree->clear();
+    for (const auto& groupPair : allGroups) {
+        QString groupName = QString::fromStdString(groupPair.first);
+        QTreeWidgetItem* groupItem = new QTreeWidgetItem(groupTree);
+        groupItem->setText(0, groupName);
+        
+        // List devices in this group
+        if (groupPair.second) {
+            for (const auto& device : groupPair.second->getDevices()) {
+                if (device) {
+                    QTreeWidgetItem* deviceItem = new QTreeWidgetItem(groupItem);
+                    // Find the device name by searching through allDevices
+                    QString deviceName = "Unknown Device";
+                    for (const auto& devicePair : allDevices) {
+                        if (devicePair.second == device) {
+                            deviceName = QString::fromStdString(devicePair.first);
+                            break;
+                        }
+                    }
+                    deviceItem->setText(0, deviceName);
+                }
+            }
+        }
+        groupTree->addTopLevelItem(groupItem);
+    }
+    groupTree->expandAll();
+    
+    // Restore selection if it still exists
+    if (!selectedGroup.isEmpty()) {
+        for (int i = 0; i < groupTree->topLevelItemCount(); ++i) {
+            QTreeWidgetItem* item = groupTree->topLevelItem(i);
+            if (item->text(0) == selectedGroup) {
+                groupTree->setCurrentItem(item);
+                currentGroup = selectedGroup;
+                break;
+            }
+        }
     }
 }
 

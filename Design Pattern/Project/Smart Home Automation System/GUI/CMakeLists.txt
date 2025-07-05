@@ -19,6 +19,9 @@ set(PROJECT_SOURCES
         mainwindow.ui
 )
 
+# Link to the existing static library
+set(SMART_HOME_LIB ${CMAKE_CURRENT_SOURCE_DIR}/lib/libSmartHomeAutomationSystemLib.a)
+
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(GUI
         MANUAL_FINALIZATION
@@ -42,7 +45,10 @@ else()
     endif()
 endif()
 
-target_link_libraries(GUI PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(GUI PRIVATE Qt${QT_VERSION_MAJOR}::Widgets ${SMART_HOME_LIB})
+
+# Add include directories for smart home system
+target_include_directories(GUI PRIVATE ../Include)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
