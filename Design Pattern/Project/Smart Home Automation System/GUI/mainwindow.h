@@ -4,7 +4,7 @@ Date: 4/06/2025
 File: mainwindow.h
 Description:
             -> This file contains the declaration of the MainWindow class,
-               which provides a Qt6 GUI interface for the Smart Home Automation System.
+                which provides a Qt6 GUI interface for the Smart Home Automation System.
             -> It replaces the console interface with a modern graphical user interface.
 */
 
@@ -33,18 +33,18 @@ Description:
 #include <map>
 
 // Include your smart home system headers
-#include "./Include/lightState.hpp"
-#include "./Include/centralControl.hpp"
-#include "./Include/deviceGroup.hpp"
-#include "./Include/command.hpp"
-#include "./Include/motionSensor.hpp"
-#include "./Include/observer.hpp"
-#include "./Include/lightObserver.hpp"
-#include "./Include/automatedMode.hpp"
-#include "./Include/deviceFactory.hpp"
-#include "./Include/thermostat.hpp"
-#include "./Include/doorLock.hpp"
-#include "./Include/securityCamera.hpp"
+#include "../Include/lightState.hpp"
+#include "../Include/centralControl.hpp"
+#include "../Include/deviceGroup.hpp"
+#include "../Include/command.hpp"
+#include "../Include/motionSensor.hpp"
+#include "../Include/observer.hpp"
+#include "../Include/lightObserver.hpp"
+#include "../Include/automatedMode.hpp"
+#include "../Include/deviceFactory.hpp"
+#include "../Include/thermostat.hpp"
+#include "../Include/doorLock.hpp"
+#include "../Include/securityCamera.hpp"
 
 QT_BEGIN_NAMESPACE
 QT_END_NAMESPACE
@@ -65,7 +65,7 @@ private slots:
     void onTurnOnDevice();
     void onTurnOffDevice();
     void onGetDeviceStatus();
-
+    
     // Device-specific controls
     void onSetThermostatTemp();
     void onSwitchThermostatMode();
@@ -73,21 +73,21 @@ private slots:
     void onUnlockDoor();
     void onEnableNightVision();
     void onDimLight();
-
+    
     // Group Management
     void onCreateGroup();
     void onAddToGroup();
     void onControlGroup();
-
+    
     // Automation & Motion
     void onTriggerMotion();
     void onSetAutomationMode();
     void onApplyAutomation();
-
+    
     // Command Management
     void onUndoCommand();
     void onClearHistory();
-
+    
     // UI Updates
     void updateDeviceList();
     void updateGroupList();
@@ -102,17 +102,17 @@ private:
     void setupStatusTab();
     void connectSignals();
     void logMessage(const QString& message);
-
+    
     // Core system components
     std::unique_ptr<CommandManager> cmdMgr;
     std::unique_ptr<AutomationContext> automation;
     std::unique_ptr<MotionSensor> sensor;
     std::map<std::string, std::shared_ptr<SmartDevice>> allDevices;
     std::map<std::string, std::shared_ptr<DeviceGroup>> allGroups;
-
+    
     // UI Components
     QTabWidget *tabWidget;
-
+    
     // Device Tab
     QWidget *deviceTab;
     QListWidget *deviceList;
@@ -123,25 +123,25 @@ private:
     QPushButton *statusBtn;
     QGroupBox *deviceControlsGroup;
     QVBoxLayout *deviceControlsLayout;
-
+    
     // Device-specific controls
     QWidget *thermostatControls;
     QSpinBox *tempSpinBox;
     QComboBox *modeComboBox;
     QPushButton *setTempBtn;
     QPushButton *switchModeBtn;
-
+    
     QWidget *doorLockControls;
     QPushButton *lockBtn;
     QPushButton *unlockBtn;
-
+    
     QWidget *cameraControls;
     QPushButton *nightVisionBtn;
-
+    
     QWidget *lightControls;
     QSpinBox *brightnessSpinBox;
     QPushButton *dimBtn;
-
+    
     // Group Tab
     QWidget *groupTab;
     QListWidget *groupList;
@@ -150,7 +150,7 @@ private:
     QPushButton *groupOnBtn;
     QPushButton *groupOffBtn;
     QListWidget *availableDevicesList;
-
+    
     // Automation Tab
     QWidget *automationTab;
     QComboBox *automationModeCombo;
@@ -158,7 +158,7 @@ private:
     QPushButton *applyAutomationBtn;
     QPushButton *triggerMotionBtn;
     QListWidget *automationDevicesList;
-
+    
     // Status Tab
     QWidget *statusTab;
     QTextEdit *logTextEdit;
@@ -166,7 +166,7 @@ private:
     QPushButton *clearHistoryBtn;
     QPushButton *clearLogBtn;
     QLabel *systemStatusLabel;
-
+    
     // Current selections
     QString currentDevice;
     QString currentGroup;
