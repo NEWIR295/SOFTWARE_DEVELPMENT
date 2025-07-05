@@ -11,6 +11,8 @@ Description:
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QDateTime>
+#include <QTextCursor>
 #include <QMainWindow>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -47,7 +49,11 @@ Description:
 #include "../Include/securityCamera.hpp"
 
 QT_BEGIN_NAMESPACE
+namespace Ui {
+class MainWindow;
+}
 QT_END_NAMESPACE
+
 
 class MainWindow : public QMainWindow
 {
@@ -171,6 +177,9 @@ private:
     QString currentDevice;
     QString currentGroup;
     QString currentAutomationDevice;
+
+    Ui::MainWindow *ui;
+
 };
 
 #endif // MAINWINDOW_H

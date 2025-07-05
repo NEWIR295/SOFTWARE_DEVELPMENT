@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -792,3 +793,22 @@ void MainWindow::updateSystemStatus()
     systemStatusLabel->setText(statusText);
 }
 
+void MainWindow::logMessage(const QString& message)
+{
+    QString timestamp = QDateTime::currentDateTime().toString("hh:mm:ss");
+    QString logEntry = QString("[%1] %2").arg(timestamp, message);
+
+    logTextEdit->append(logEntry);
+
+    // Auto-scroll to bottom
+    QTextCursor cursor = logTextEdit->textCursor();
+    cursor.movePosition(QTextCursor::End);
+    logTextEdit->setTextCursor(cursor);
+
+    // Optional: Limit log size to prevent memory issues
+    if (logTextEdit->document()->blockCount() > 1000) {
+        cursor.movePosition(QTextCursor::Start);
+        cursor.movePosition(QTextCursor::Down, QTextCursor::KeepAnchor, 100);
+        cursor.deleteChar();
+    }
+}
