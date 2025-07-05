@@ -22,7 +22,7 @@ To run the CLI version:
    ./Output
    ```
 
-### GUI Version
+### GUI Version  -Still in the implementation phase-
 
 To run the GUI version:
 
