@@ -86,4 +86,11 @@
     ],
     "cmake.sourceDirectory": "/home/newir529/SOFTWARE_DEVELPMENT/CPP/Projects/Sudoku V1",
     "ros.distro": "jazzy",
+    "ROS2.distro": "jazzy",
+    "python.autoComplete.extraPaths": [
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ],
 }
