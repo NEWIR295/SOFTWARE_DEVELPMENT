@@ -66,6 +66,7 @@ class TicTacToe:
         """
         row, col = pos
         self.__board[row][col] = symbol
+                            
         
     # player 1 getter method 
     @property
@@ -139,7 +140,7 @@ class TicTacToe:
                 count_Y = 0
         
         
-        # check ascending lines  
+        # check descending lines  
         if self.__board[0][0] == self.__board[1][1] == self.__board[2][2]:
         
             if self.__board[0][0] == Symbols.X.value:
@@ -148,7 +149,7 @@ class TicTacToe:
             elif self.__board[0][0] == Symbols.O.value:
                 return State.O_WIN.value
             
-        # check descending lines  
+        # check ascending lines  
         if self.__board[2][0] == self.__board[1][1] == self.__board[0][2]:
         
             if self.__board[2][0] == Symbols.X.value:
@@ -171,10 +172,17 @@ class TicTacToe:
         """
         Method Set Players Name and Symbol Choice
         """
-        self.player1= input("Enter 1st Player Name: ")
-        self.__player1Choice = input("Enter 1st Player Choice: ").upper()
-        self.player2= input("Enter 2nd Player Name: ")
-        self.__player2Choice = input("Enter 2nd Player Choice: ").upper()
+        self.player1 = input("Enter 1st Player Name: ")
+        self.player2 = input("Enter 2nd Player Name: ")
+        
+        self.__player1Choice = ""
+
+        while self.__player1Choice not in ["X", "O"]:
+                self.__player1Choice = input(f"Enter {self.__player1} Choice X or O: ").upper()
+                
+        self.__player2Choice = "O" if self.__player1Choice == "X" else "X"
+        
+        # print(f"{self.__player1} Choice: {self.__player1Choice}, {self.__player2} Choice: {self.__player2Choice}")
         
         turn = input("Who Should Start? [Enter Player Name Only] ")
         if turn == self.player1 :
@@ -208,7 +216,7 @@ class TicTacToe:
                 print(self.__board[row][col], end = " ") 
             print('\n')
         
-        print("\n")
+        # print("\n")
             
     # Game Logic
     def game(self):
@@ -223,14 +231,14 @@ class TicTacToe:
                         """
             print(header)  
             
-            self.__setPlayers()      
             
+            self.__setPlayers()      
             self.__showPlayers()      
+            self.__showBoard() # Show Initial Board
             
             # Game Starting
             for moves in range(3*3):
                 
-                self.__showBoard() # Show Board After Each Move
                 
                 # Set Players Turns
                 if moves % 2 == 0:
@@ -253,13 +261,16 @@ class TicTacToe:
                         pos = tuple(map(int, input(f"{self.__player2}, Enter your next move! (x,y) ").split(",")))
                         self.__setBoard(self.__playerMap[self.__player2][0], pos) 
                 
+                self.__showBoard() # Show Board After Each Move
                 
                 # Check Game Status
-                if self.__is_completed() == State.TIE.value:
+                status =  self.__is_completed() 
+                
+                if status == State.TIE.value:
                     print("Tie!!")
                     break
                 
-                elif self.__is_completed() == State.O_WIN.value:
+                elif status == State.O_WIN.value:
                     
                     if self.__player1Choice == State.O_WIN.value:
                             print(f"Congratulation, {self.__player1}!!")
@@ -269,7 +280,7 @@ class TicTacToe:
                             
                     break
                             
-                elif self.__is_completed() == State.X_WIN.value:
+                elif status == State.X_WIN.value:
                     
                     if self.__player1Choice == State.X_WIN.value:
                             print(f"Congratulation, {self.__player1}!!")
@@ -286,16 +297,12 @@ class TicTacToe:
                 print("Exiting The Game .....")
                 break
         
-
+            self.__board = np.full((3, 3), Symbols.EMPTY_CELL.value)
 # %%
 if __name__ == '__main__':
-    game = TicTacToe()
-    game.game()
-
-
-
-
-# %%
-
-
+    try:
+        game = TicTacToe()
+        game.game()
+    except KeyboardInterrupt:
+        pass
 
