@@ -1,0 +1,11 @@
+# 1. Install the missing package that re-enables the attribute
+sudo apt install gvfs-backends
+
+# 2. Kill all Nautilus instances
+nautilus -q
+
+# 3. Set a local override (this tricks Nautilus into allowing it again)
+gsettings set org.gnome.nautilus.icon-view metadata-custom-icon true
+
+# 4. Now the gio command works again
+gio set Sudoku metadata::custom-icon "file://$PWD/sudoku.png"
